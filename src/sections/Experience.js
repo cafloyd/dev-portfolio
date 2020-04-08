@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Text, Flex, Box } from 'rebass/styled-components';
+import { Image, Text, Flex, Box } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -14,31 +14,24 @@ import Hide from '../components/Hide';
 const Background = () => (
   <div>
     <Triangle
-      color="secondary"
-      height={['80vh', '80vh']}
+      color="backgroundDark"
+      height={['15vh', '10vh']}
       width={['100vw', '100vw']}
       invertX
     />
 
     <Triangle
-      color="background"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
-      invertX
-    />
-
-    <Triangle
-      color="primary"
-      height={['25vh', '40vh']}
-      width={['75vw', '60vw']}
-      invertX
+      color="secondary"
+      height={['50vh', '40vh']}
+      width={['70vw', '40vw']}
       invertY
     />
 
     <Triangle
-      color="backgroundDark"
-      height={['25vh', '20vh']}
+      color="primary"
+      height={['40vh', '15vh']}
       width={['100vw', '100vw']}
+      invertX
       invertY
     />
   </div>
@@ -53,7 +46,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -77,7 +70,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ProjectImage = styled(Image)`
+const ExperienceImage = styled(Image)`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
   padding: 40px;
@@ -91,7 +84,7 @@ const ProjectImage = styled(Image)`
   }
 `;
 
-const ProjectTag = styled.div`
+const ExperienceTag = styled.div`
   position: relative;
   height: ${CARD_HEIGHT};
   top: calc(
@@ -103,37 +96,48 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
+const SingleExperience = ({
+  company,
+  companyLogo,
+  title,
+  startDate,
+  endDate,
+  location,
+  // descriptionOfRole,
 }) => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
-          <Title my={2} pb={1} color="text">
-            {name}
+          <Title my={2} pb={1}>
+            {title}
           </Title>
+          <Text>
+            {company}
+          </Text>
         </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-          {description}
+        {/* <Text>
+          {`${startDate} - ${endDate}`}
+        </Text> */}
+        <Text my={2} pb={1}>
+          <i>
+            {location}
+          </i>
         </Text>
+        {/* <Text width={[1]} style={{ overflow: 'auto' }}>
+          {descriptionOfRole}
+        </Text> */}
       </TextContainer>
 
       <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
-        <ProjectTag>
+        <ExperienceImage src={companyLogo.image.src} alt={companyLogo.title} />
+        <ExperienceTag>
           <Flex
             style={{
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
+            {/* <Box mx={1} fontSize={5}>
               <SocialLink
                 name="Check repository"
                 fontAwesomeIcon="github"
@@ -142,32 +146,32 @@ const Project = ({
             </Box>
             <Box mx={1} fontSize={5}>
               <SocialLink
-                name="See project"
+                name="See experience"
                 fontAwesomeIcon="globe"
-                url={projectUrl}
+                url={experienceUrl}
               />
-            </Box>
+            </Box> */}
           </Flex>
-          <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
+          {/* <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
             {type}
-          </ImageSubtitle>
+          </ImageSubtitle> */}
           <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+            <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
           </Hide>
-        </ProjectTag>
+        </ExperienceTag>
       </ImageContainer>
     </Flex>
   </Card>
 );
 
-Project.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
-  logo: PropTypes.shape({
+SingleExperience.propTypes = {
+  company: PropTypes.string.isRequired,
+  // descriptionOfRole: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
+  companyLogo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
     }),
@@ -175,36 +179,35 @@ Project.propTypes = {
   }).isRequired,
 };
 
-const Projects = () => (
-  <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" />
+const Experiences = () => (
+  <Section.Container id="experience" Background={Background}>
+    <Section.Header name="Work Experience" />
     <StaticQuery
       query={graphql`
-        query ProjectsQuery {
+        query ExperiencesQuery {
           contentfulAbout {
-            projects {
+            experiences {
               id
-              name
-              description
-              projectUrl
-              repositoryUrl
-              publishedDate(formatString: "MM / YYYY")
-              type
-              logo {
+              title
+              company
+              companyLogo {
                 title
                 image: resize(width: 200, quality: 100) {
                   src
                 }
               }
+              startDate(formatString: "MM / YYYY")
+              endDate(formatString: "MM / YYYY")
+              location
             }
           }
         }
       `}
       render={({ contentfulAbout }) => (
         <CardContainer minWidth="350px">
-          {contentfulAbout.projects.map((p, i) => (
+          {contentfulAbout.experiences.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project {...p} />
+              <SingleExperience {...p} />
             </Fade>
           ))}
         </CardContainer>
@@ -213,4 +216,4 @@ const Projects = () => (
   </Section.Container>
 );
 
-export default Projects;
+export default Experiences;

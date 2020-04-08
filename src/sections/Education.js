@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Text, Flex, Box } from 'rebass/styled-components';
+import { Image, Text, Flex, Box } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -14,21 +14,13 @@ import Hide from '../components/Hide';
 const Background = () => (
   <div>
     <Triangle
-      color="secondary"
-      height={['80vh', '80vh']}
-      width={['100vw', '100vw']}
-      invertX
-    />
-
-    <Triangle
-      color="background"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
-      invertX
-    />
-
-    <Triangle
       color="primary"
+      height={['25vh', '20vh']}
+      width={['100vw', '100vw']}
+    />
+
+    <Triangle
+      color="secondary"
       height={['25vh', '40vh']}
       width={['75vw', '60vw']}
       invertX
@@ -53,7 +45,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -77,7 +69,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ProjectImage = styled(Image)`
+const EducationImage = styled(Image)`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
   padding: 40px;
@@ -91,7 +83,7 @@ const ProjectImage = styled(Image)`
   }
 `;
 
-const ProjectTag = styled.div`
+const EducationTag = styled.div`
   position: relative;
   height: ${CARD_HEIGHT};
   top: calc(
@@ -103,37 +95,46 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
+const SingleEducation = ({
+  degree,
+  school,
+  companyLogo,
+  completionDate,
+  location,
 }) => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
-          <Title my={2} pb={1} color="text">
-            {name}
+          <Title my={2} pb={1}>
+            {degree}
           </Title>
+          <Text>
+            {school}
+          </Text>
         </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-          {description}
+        {/* <Text>
+          {`${startDate} - ${endDate}`}
+        </Text> */}
+        <Text my={2} pb={1}>
+          <i>
+            {location}
+          </i>
         </Text>
+        {/* <Text width={[1]} style={{ overflow: 'auto' }}>
+          {descriptionOfJob}
+        </Text> */}
       </TextContainer>
 
       <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
-        <ProjectTag>
+        <EducationImage src={companyLogo.image.src} alt={companyLogo.title} />
+        <EducationTag>
           <Flex
             style={{
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
+            {/* <Box mx={1} fontSize={5}>
               <SocialLink
                 name="Check repository"
                 fontAwesomeIcon="github"
@@ -142,32 +143,30 @@ const Project = ({
             </Box>
             <Box mx={1} fontSize={5}>
               <SocialLink
-                name="See project"
+                name="See experience"
                 fontAwesomeIcon="globe"
-                url={projectUrl}
+                url={experienceUrl}
               />
-            </Box>
+            </Box> */}
           </Flex>
-          <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
+          {/* <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
             {type}
-          </ImageSubtitle>
+          </ImageSubtitle> */}
           <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+            <ImageSubtitle bg="backgroundDark">{completionDate}</ImageSubtitle>
           </Hide>
-        </ProjectTag>
+        </EducationTag>
       </ImageContainer>
     </Flex>
   </Card>
 );
 
-Project.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
-  logo: PropTypes.shape({
+SingleEducation.propTypes = {
+  school: PropTypes.string.isRequired,
+  degree: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  completionDate: PropTypes.string.isRequired,
+  companyLogo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
     }),
@@ -175,22 +174,20 @@ Project.propTypes = {
   }).isRequired,
 };
 
-const Projects = () => (
-  <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" />
+const AllEducation = () => (
+  <Section.Container id="education" Background={Background}>
+    <Section.Header name="Education" />
     <StaticQuery
       query={graphql`
-        query ProjectsQuery {
+        query AllEducationQuery {
           contentfulAbout {
-            projects {
+            allEducation {
               id
-              name
-              description
-              projectUrl
-              repositoryUrl
-              publishedDate(formatString: "MM / YYYY")
-              type
-              logo {
+              degree
+              school
+              completionDate(formatString: "YYYY")
+              location
+              companyLogo {
                 title
                 image: resize(width: 200, quality: 100) {
                   src
@@ -202,9 +199,9 @@ const Projects = () => (
       `}
       render={({ contentfulAbout }) => (
         <CardContainer minWidth="350px">
-          {contentfulAbout.projects.map((p, i) => (
+          {contentfulAbout.allEducation.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project {...p} />
+              <SingleEducation {...p} />
             </Fade>
           ))}
         </CardContainer>
@@ -213,4 +210,4 @@ const Projects = () => (
   </Section.Container>
 );
 
-export default Projects;
+export default AllEducation;

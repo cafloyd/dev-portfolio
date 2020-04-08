@@ -23,7 +23,7 @@ const Background = () => (
     />
 
     <Triangle
-      color="primaryDark"
+      color="primary"
       height={['25vh', '35vh']}
       width={['75vw', '60vw']}
       invertX
@@ -76,7 +76,7 @@ const LandingPage = () => (
               fontSize={[6, 7]}
               mb={[3, 4, 5]}
             >
-              {`Hello, I'm ${name}!`}
+              {name}
             </Heading>
 
             <Heading
@@ -87,7 +87,7 @@ const LandingPage = () => (
               textAlign="center"
               style={centerHorizontally}
             >
-              <TextLoop interval={5000}>
+              <TextLoop interval={2000}>
                 {roles
                   .sort(() => deterministicBehaviour || Math.random() - 0.5)
                   .map((text) => (
