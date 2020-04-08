@@ -23,7 +23,7 @@ const Background = () => (
     />
 
     <Triangle
-      color="primaryDark"
+      color="primary"
       height={['25vh', '35vh']}
       width={['75vw', '60vw']}
       invertX
@@ -87,7 +87,7 @@ const LandingPage = () => (
               textAlign="center"
               style={centerHorizontally}
             >
-              <TextLoop interval={5000}>
+              <TextLoop interval={2000}>
                 {roles
                   .sort(() => deterministicBehaviour || Math.random() - 0.5)
                   .map((text) => (

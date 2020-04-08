@@ -14,21 +14,13 @@ import Hide from '../components/Hide';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryLight"
-      height={['80vh', '80vh']}
+      color="primary"
+      height={['25vh', '20vh']}
       width={['100vw', '100vw']}
-      invertX
     />
 
     <Triangle
-      color="background"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
-      invertX
-    />
-
-    <Triangle
-      color="primaryDark"
+      color="secondary"
       height={['25vh', '40vh']}
       width={['75vw', '60vw']}
       invertX
@@ -124,8 +116,10 @@ const SingleEducation = ({
         {/* <Text>
           {`${startDate} - ${endDate}`}
         </Text> */}
-        <Text>
-          {location}
+        <Text my={2} pb={1}>
+          <i>
+            {location}
+          </i>
         </Text>
         {/* <Text width={[1]} style={{ overflow: 'auto' }}>
           {descriptionOfJob}

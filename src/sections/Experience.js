@@ -14,31 +14,24 @@ import Hide from '../components/Hide';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryLight"
-      height={['80vh', '80vh']}
+      color="backgroundDark"
+      height={['15vh', '10vh']}
       width={['100vw', '100vw']}
       invertX
     />
 
     <Triangle
-      color="background"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
-      invertX
-    />
-
-    <Triangle
-      color="primaryDark"
-      height={['25vh', '40vh']}
-      width={['75vw', '60vw']}
-      invertX
+      color="secondary"
+      height={['50vh', '40vh']}
+      width={['70vw', '40vw']}
       invertY
     />
 
     <Triangle
-      color="backgroundDark"
-      height={['25vh', '20vh']}
+      color="primary"
+      height={['40vh', '15vh']}
       width={['100vw', '100vw']}
+      invertX
       invertY
     />
   </div>
@@ -126,8 +119,10 @@ const SingleExperience = ({
         {/* <Text>
           {`${startDate} - ${endDate}`}
         </Text> */}
-        <Text>
-          {location}
+        <Text my={2} pb={1}>
+          <i>
+            {location}
+          </i>
         </Text>
         {/* <Text width={[1]} style={{ overflow: 'auto' }}>
           {descriptionOfRole}
