@@ -119,8 +119,10 @@ const SingleExperience = ({
         {/* <Text>
           {`${startDate} - ${endDate}`}
         </Text> */}
-        <Text>
-          {location}
+        <Text my={2} pb={1}>
+          <i>
+            {location}
+          </i>
         </Text>
         {/* <Text width={[1]} style={{ overflow: 'auto' }}>
           {descriptionOfRole}
