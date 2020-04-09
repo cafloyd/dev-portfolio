@@ -58,7 +58,7 @@ const Footer = () => (
         <Box p={[2, 3]} backgroundColor="secondaryDark" as="footer">
           <FooterContainer>
             <Fade left>
-              <TextFooter fontSize={[5, 10]} center>
+              <TextFooter fontSize={[2, 3]} center>
                 <span>
                   {`© ${name} 2020`}
                   </span>
