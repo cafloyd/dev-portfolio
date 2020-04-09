@@ -11,7 +11,7 @@ const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
 
 const HeaderContainer = styled(Headroom)`
   .headroom--pinned {
-    background: ${(props) => props.theme.colors.primaryDark};
+    background: ${(props) => props.theme.colors.secondaryDark};
   }
 
   position: absolute;

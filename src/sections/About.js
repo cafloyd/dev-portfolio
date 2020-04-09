@@ -11,14 +11,14 @@ import markdownRenderer from '../components/MarkdownRenderer';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryLight"
+      color="secondary"
       height={['50vh', '20vh']}
       width={['50vw', '50vw']}
       invertY
     />
 
     <Triangle
-      color="primaryDark"
+      color="primary"
       height={['20vh', '40vh']}
       width={['75vw', '70vw']}
       invertX
@@ -43,7 +43,7 @@ const ProfilePicture = styled(Image)`
 
 const About = () => (
   <Section.Container id="about" Background={Background}>
-    <Section.Header name="About me" icon="🙋‍♂️" label="person" />
+    <Section.Header name="About me" />
     <StaticQuery
       query={graphql`
         query AboutMeQuery {
