@@ -58,9 +58,11 @@ const Footer = () => (
         <Box p={[2, 3]} backgroundColor="secondaryDark" as="footer">
           <FooterContainer>
             <Fade left>
-              <TextFooter fontSize={[2, 3]}>
-                <span>{`${name} Portfolio - Powered by `}</span>
-                <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
+              <TextFooter fontSize={[5, 10]} center>
+                <span>
+                  {`© ${name} 2020`}
+                  </span>
+                {/* <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
                 <span>, </span>
                 <Link href="https://www.contentful.com/" mr={1}>
                   Contentful
@@ -71,7 +73,7 @@ const Footer = () => (
                 </Link>
                 <span role="img" aria-label="heart">
                   ❤️
-                </span>
+                </span> */}
               </TextFooter>
             </Fade>
             <Flex>
