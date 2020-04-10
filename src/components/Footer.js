@@ -60,7 +60,7 @@ const Footer = () => (
             <Fade left>
               <TextFooter fontSize={[2, 3]} center>
                 <span>
-                  {`© ${name} 2020`}
+                  {`© ${name}, 2020`}
                   </span>
                 {/* <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
                 <span>, </span>
