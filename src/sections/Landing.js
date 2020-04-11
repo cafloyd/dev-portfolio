@@ -17,13 +17,13 @@ const Background = () => (
     />
 
     <Triangle
-      color="primaryDark"
+      color="secondaryDark"
       height={['38vh', '80vh']}
       width={['50vw', '35vw']}
     />
 
     <Triangle
-      color="primary"
+      color="secondary"
       height={['25vh', '35vh']}
       width={['75vw', '60vw']}
       invertX
@@ -72,7 +72,7 @@ const LandingPage = () => (
             <Heading
               textAlign="center"
               as="h1"
-              color="primary"
+              color="primaryDark"
               fontSize={[6, 7]}
               mb={[3, 4, 5]}
             >
@@ -81,7 +81,7 @@ const LandingPage = () => (
 
             <Heading
               as="h2"
-              color="primary"
+              color="primaryDark"
               fontSize={[5, 6]}
               mb={[3, 5]}
               textAlign="center"

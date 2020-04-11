@@ -20,7 +20,7 @@ const Background = () => (
       invertX
     /> */}
     <Triangle
-      color="primaryDark"
+      color="secondaryDark"
       height={['50vh', '40vh']}
       width={['70vw', '70vw']}
       invertX
@@ -42,7 +42,7 @@ const Background = () => (
     {/* originally - 50, 30, 20, 50 */}
 
     <Triangle
-      color="primary"
+      color="secondary"
       height={['25vh', '20vh']}
       width={['100vw', '100vw']}
     />
