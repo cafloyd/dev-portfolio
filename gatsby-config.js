@@ -17,7 +17,8 @@ const plugins = [
     resolve: 'gatsby-plugin-web-font-loader',
     options: {
       google: {
-        families: ['Cabin', 'Open Sans'],
+        families:
+        ['Lato', 'Nunito']
       },
     },
   },

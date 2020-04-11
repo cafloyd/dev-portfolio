@@ -5,7 +5,6 @@ import TextLoop from 'react-text-loop';
 import { SectionLink } from 'react-scroll-section';
 import Section from '../components/Section';
 import SocialLink from '../components/SocialLink';
-import MouseIcon from '../components/MouseIcon';
 import Triangle from '../components/Triangle';
 
 const Background = () => (
@@ -39,7 +38,22 @@ const Background = () => (
   </div>
 );
 
-const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
+const stickToTop = {
+  marginTop: '0em'
+}
+const headingStyle = {
+  // paddingTop: '2em',
+  fontFamily: 'Lato, sans-serif'
+}
+const subHeadingStyle = {
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  // paddingBottom: '2em',
+  fontFamily: 'Nunito'
+}
+const socialStyle = {
+  marginBottom: 0,
+}
 
 const LandingPage = () => (
   <Section.Container id="home" Background={Background}>
@@ -69,45 +83,46 @@ const LandingPage = () => (
 
         return (
           <Fragment>
-            <Heading
-              textAlign="center"
-              as="h1"
-              color="primaryDark"
-              fontSize={[6, 7]}
-              mb={[3, 4, 5]}
-            >
-              {name}
-            </Heading>
+            <div style={stickToTop}>
+              <Heading
+                textAlign="center"
+                as="h1"
+                color="primaryDark"
+                // fontFamily="Lato"
+                style={headingStyle}
+                fontSize={[6, 7]}
+                mb={[3, 4, 5]}
+              >
+                {name}
+              </Heading>
 
-            <Heading
-              as="h2"
-              color="primaryDark"
-              fontSize={[5, 6]}
-              mb={[3, 5]}
-              textAlign="center"
-              style={centerHorizontally}
-            >
-              <TextLoop interval={2000}>
-                {roles
-                  .sort(() => deterministicBehaviour || Math.random() - 0.5)
-                  .map((text) => (
-                    <Text width={[300, 500]} key={text}>
-                      {text}
-                    </Text>
-                  ))}
-              </TextLoop>
-            </Heading>
+              <Heading
+                as="h2"
+                color="primary"
+                fontSize={[5, 6]}
+                mb={[3, 10]}
+                textAlign="center"
+                style={subHeadingStyle}
+              >
+                <TextLoop interval={2000}>
+                  {roles
+                    .sort(() => deterministicBehaviour || Math.random() - 0.5)
+                    .map((text) => (
+                      <Text width={[300, 500]} key={text}>
+                        {text}
+                      </Text>
+                    ))}
+                </TextLoop>
+              </Heading>
+            </div>
 
-            <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
+            <Flex alignItems="center" justifyContent="center" flexWrap="wrap" style={socialStyle}>
               {socialLinks.map(({ id, ...rest }) => (
                 <Box mx={3} fontSize={[5, 6, 6]} key={id}>
                   <SocialLink {...rest} />
                 </Box>
               ))}
             </Flex>
-            <SectionLink section="about">
-              {({ onClick }) => <MouseIcon onClick={onClick} />}
-            </SectionLink>
           </Fragment>
         );
       }}
