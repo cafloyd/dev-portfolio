@@ -35,9 +35,14 @@ const formatLinks = (allLinks) =>
     },
     { links: [], home: null },
   );
+const sticky = {
+  position: 'fixed',
+  top: 0,
+  // width: '100%'
+}
 
 const Header = () => (
-  <HeaderContainer>
+  <HeaderContainer style={sticky}>
     <Fade top>
       <Flex
         flexWrap="wrap"
