@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass/styled-components';
 import { StaticQuery, graphql } from 'gatsby';
@@ -103,62 +103,73 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
-}) => (
-  <Card p={0}>
-    <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer>
-        <span>
-          <Title my={2} pb={1} color="text">
-            {name}
-          </Title>
-        </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-          {description}
-        </Text>
-      </TextContainer>
+class Project extends Component {
+  constructor() {
+    super();
+    this.state = {
+      expanded: false
+    };
+    this.toggleExpand = this.toggleExpand.bind(this)
+  }
 
-      <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
-        <ProjectTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
-          </Flex>
-          <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            {type}
-          </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
-        </ProjectTag>
-      </ImageContainer>
-    </Flex>
-  </Card>
-);
+  toggleExpand() {
+    this.setState({
+      expanded: !this.state.expanded
+    })
+  }
+
+  render() {
+    return (
+      <Card p={0} onClick={this.toggleExpand}>
+        {this.state.expanded ? : }
+        <Flex style={{ height: CARD_HEIGHT }}>
+          <TextContainer>
+            <span>
+              <Title my={2} pb={1} color="text">
+                {this.props.name}
+              </Title>
+            </span>
+            <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+              {this.props.description}
+            </Text>
+          </TextContainer>
+
+          <ImageContainer>
+            <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
+            <ProjectTag>
+              <Flex
+                style={{
+                  float: 'right',
+                }}
+              >
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="Check repository"
+                    fontAwesomeIcon="github"
+                    url={this.props.repositoryUrl}
+                  />
+                </Box>
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="See project"
+                    fontAwesomeIcon="globe"
+                    url={this.props.projectUrl}
+                  />
+                </Box>
+              </Flex>
+              <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
+                {this.props.type}
+              </ImageSubtitle>
+              <Hide query={MEDIA_QUERY_SMALL}>
+                <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
+              </Hide>
+            </ProjectTag>
+          </ImageContainer>
+        </Flex>
+      </Card>
+    )
+  }
+}
 
 Project.propTypes = {
   name: PropTypes.string.isRequired,
@@ -204,7 +215,7 @@ const Projects = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project {...p} />
+              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} />
             </Fade>
           ))}
         </CardContainer>
