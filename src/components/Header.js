@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { SectionLinks } from 'react-scroll-section';
 import Fade from 'react-reveal/Fade';
 import RouteLink from './RouteLink';
-import Logo from './Logo/Portfolio.svg';
 import Initials from './Logo/Initials.svg'
 
 const capitalize = (s) => s && s[0].toUpperCase() + s.slice(1);
