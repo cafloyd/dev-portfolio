@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
+import { ExpandedCardContainer, ExpandedCard } from '../components/ExpandedCard'
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
@@ -218,7 +219,7 @@ class Project extends Component {
       </Card>
     )
     return(
-      <Card p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
+      <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
         <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
           <ExpandedTextContainer>
             <span>
@@ -263,7 +264,7 @@ class Project extends Component {
             </ProjectTag>
           </ImageContainer>
         </Flex>
-      </Card>
+      </ExpandedCard>
     )
   }
 }

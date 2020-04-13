@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
-import { CardContainer, Card } from '../components/Card';
+import { CardContainer, StaticCard } from '../components/StaticCard';
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
@@ -122,7 +122,7 @@ const SingleEducation = ({
   completionDate,
   location,
 }) => (
-  <Card p={0}>
+  <StaticCard p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
@@ -178,7 +178,7 @@ const SingleEducation = ({
         </EducationTag>
       </ImageContainer>
     </Flex>
-  </Card>
+  </StaticCard>
 );
 
 SingleEducation.propTypes = {
