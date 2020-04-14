@@ -50,7 +50,7 @@ const EllipsisHeading = styled(Heading)`
   display: -webkit-inline-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.sectionHeader} 5px solid;
 `;
 
 const Post = ({ title, text, image, url, date, time }) => (

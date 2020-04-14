@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass/styled-components';
 import { StaticQuery, graphql } from 'gatsby';
@@ -6,6 +7,7 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
+import { ExpandedCardContainer, ExpandedCard } from '../components/ExpandedCard'
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
@@ -45,6 +47,8 @@ const Background = () => (
 );
 
 const CARD_HEIGHT = '200px';
+const EXPANDED_CARD_HEIGHT = '400px';
+const EXPANDED_CARD_WIDTH = 'auto';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -53,7 +57,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${(props) => props.theme.colors.primary} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.sectionHeader} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -67,6 +71,17 @@ const TextContainer = styled.div`
     width: calc(100% - (${CARD_HEIGHT} / 2));
   }
 `;
+const ExpandedTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  width: calc(100% - ${CARD_HEIGHT});
+
+  ${MEDIA_QUERY_SMALL} {
+    width: calc(100% - (${EXPANDED_CARD_HEIGHT} / 2));
+  }
+`;
 
 const ImageContainer = styled.div`
   margin: auto;
@@ -76,6 +91,15 @@ const ImageContainer = styled.div`
     width: calc(${CARD_HEIGHT} / 2);
   }
 `;
+// const ExpandedImageContainer = styled.div`
+//   margin: auto;
+//   margin-right: 0;
+//   width: ${CARD_HEIGHT};
+
+//   ${MEDIA_QUERY_SMALL} {
+//     width: calc(${EXPANDED_CARD_HEIGHT} / 2);
+//   }
+// `;
 
 const ProjectImage = styled(Image)`
   width: ${CARD_HEIGHT};
@@ -103,62 +127,130 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
-}) => (
-  <Card p={0}>
-    <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer>
-        <span>
-          <Title my={2} pb={1} color="text">
-            {name}
-          </Title>
-        </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-          {description}
-        </Text>
-      </TextContainer>
+const textContainerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around"
+}
 
-      <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
-        <ProjectTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
-          </Flex>
-          <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            {type}
-          </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
-        </ProjectTag>
-      </ImageContainer>
-    </Flex>
-  </Card>
-);
+class Project extends Component {
+  constructor() {
+    super();
+    this.state = {
+      expanded: false
+    };
+    this.toggleExpand = this.toggleExpand.bind(this)
+  }
+
+  toggleExpand() {
+    this.setState({
+      // eslint-disable-next-line react/no-access-state-in-setstate
+      expanded: !this.state.expanded
+    })
+  }
+
+  render() {
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    if (!this.state.expanded) return (
+      <Card p={0}>
+        <Flex style={{ height: CARD_HEIGHT }}>
+          <TextContainer style={textContainerStyle}>
+            <span>
+              <Title my={2} pb={1} color="text">
+                {this.props.name}
+              </Title>
+            </span>
+            <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+              {this.props.description}
+            </Text>
+            <Flex
+              style={{
+                float: 'left',
+                // marginBottom: '1em'
+              }}
+            >
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={this.props.repositoryUrl}
+                />
+              </Box>
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="See project"
+                  fontAwesomeIcon="globe"
+                  url={this.props.projectUrl}
+                />
+              </Box>
+            </Flex>
+          </TextContainer>
+
+          <ImageContainer>
+            <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
+            <ProjectTag>
+              <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
+                {this.props.type}
+              </ImageSubtitle>
+              <Hide query={MEDIA_QUERY_SMALL}>
+                <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
+              </Hide>
+            </ProjectTag>
+          </ImageContainer>
+        </Flex>
+      </Card>
+    )
+    return(
+      <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
+        <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
+          <ExpandedTextContainer style={textContainerStyle}>
+            <span>
+              <Title my={2} pb={1} color="text">
+                {this.props.name}
+              </Title>
+            </span>
+            <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+              {this.props.description}
+            </Text>
+            <Flex
+              style={{
+                float: 'left',
+                // marginBottom: '1em'
+              }}
+            >
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={this.props.repositoryUrl}
+                />
+              </Box>
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="See project"
+                  fontAwesomeIcon="globe"
+                  url={this.props.projectUrl}
+                />
+              </Box>
+            </Flex>
+          </ExpandedTextContainer>
+
+          <ImageContainer>
+            <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
+            <ProjectTag>
+              <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
+                {this.props.type}
+              </ImageSubtitle>
+              <Hide query={MEDIA_QUERY_SMALL}>
+                <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
+              </Hide>
+            </ProjectTag>
+          </ImageContainer>
+        </Flex>
+      </ExpandedCard>
+    )
+  }
+}
 
 Project.propTypes = {
   name: PropTypes.string.isRequired,
@@ -204,7 +296,7 @@ const Projects = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project {...p} />
+              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} />
             </Fade>
           ))}
         </CardContainer>

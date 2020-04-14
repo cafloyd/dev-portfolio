@@ -41,6 +41,12 @@ const Background = () => (
 const stickToTop = {
   marginTop: '0em'
 }
+const stickToBottom = {
+  position: 'absolute',
+  bottom: '2em',
+  alignItems: 'center',
+  justifyContent: 'center'
+}
 const headingStyle = {
   // paddingTop: '2em',
   fontFamily: 'Lato, sans-serif'
@@ -52,7 +58,13 @@ const subHeadingStyle = {
   fontFamily: 'Nunito'
 }
 const socialStyle = {
-  marginBottom: 0,
+  // bottom: '3em',
+  // position: 'absolute',
+  top: '3em',
+  position: 'relative',
+  alignItems: "center",
+  justifyContent: "center",
+  flexWrap: "wrap"
 }
 
 const LandingPage = () => (
@@ -88,7 +100,6 @@ const LandingPage = () => (
                 textAlign="center"
                 as="h1"
                 color="primaryDark"
-                // fontFamily="Lato"
                 style={headingStyle}
                 fontSize={[6, 7]}
                 mb={[3, 4, 5]}
@@ -104,7 +115,7 @@ const LandingPage = () => (
                 textAlign="center"
                 style={subHeadingStyle}
               >
-                <TextLoop interval={2000}>
+                <TextLoop interval={1500}>
                   {roles
                     .sort(() => deterministicBehaviour || Math.random() - 0.5)
                     .map((text) => (
@@ -115,14 +126,15 @@ const LandingPage = () => (
                 </TextLoop>
               </Heading>
             </div>
-
-            <Flex alignItems="center" justifyContent="center" flexWrap="wrap" style={socialStyle}>
-              {socialLinks.map(({ id, ...rest }) => (
-                <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-                  <SocialLink {...rest} />
-                </Box>
-              ))}
-            </Flex>
+            {/* <div position="relative" width="100%"> */}
+              <Flex style={socialStyle}>
+                {socialLinks.map(({ id, ...rest }) => (
+                  <Box mx={3} fontSize={[5, 6, 6]} key={id}>
+                    <SocialLink {...rest} />
+                  </Box>
+                ))}
+              </Flex>
+            {/* </div> */}
           </Fragment>
         );
       }}
