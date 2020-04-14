@@ -170,7 +170,7 @@ class Project extends Component {
   render() {
     // eslint-disable-next-line react/no-access-state-in-setstate
     if (!this.state.expanded) return (
-      <Card p={0} onClick={this.toggleExpand}>
+      <Card p={0}>
         <Flex style={{ height: CARD_HEIGHT }}>
           <TextContainer>
             <span>
