@@ -114,19 +114,6 @@ const ProjectImage = styled(Image)`
     padding: 10px;
   }
 `;
-// const ExpandedProjectImage = styled(Image)`
-//   width: ${EXPANDED_CARD_HEIGHT};
-//   height: ${EXPANDED_CARD_HEIGHT};
-//   padding: 40px;
-//   margin-top: 0px;
-
-//   ${MEDIA_QUERY_SMALL} {
-//     height: calc(${EXPANDED_CARD_HEIGHT} / 2);
-//     width: calc(${EXPANDED_CARD_HEIGHT} / 2);
-//     margin-top: calc(${EXPANDED_CARD_HEIGHT} / 4);
-//     padding: 10px;
-//   }
-// `;
 
 const ProjectTag = styled.div`
   position: relative;
@@ -139,17 +126,12 @@ const ProjectTag = styled.div`
     top: calc(-${CARD_HEIGHT} - 3.5px + (${CARD_HEIGHT} / 4));
   }
 `;
-// const ExpandedProjectTag = styled.div`
-//   position: relative;
-//   height: ${EXPANDED_CARD_HEIGHT};
-//   top: calc(
-//     -${EXPANDED_CARD_HEIGHT} - 3.5px
-//   ); /*don't know why I have to add 3.5px here ... */
 
-//   ${MEDIA_QUERY_SMALL} {
-//     top: calc(-${EXPANDED_CARD_HEIGHT} - 3.5px + (${EXPANDED_CARD_HEIGHT} / 4));
-//   }
-// `;
+const textContainerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around"
+}
 
 class Project extends Component {
   constructor() {
@@ -172,7 +154,7 @@ class Project extends Component {
     if (!this.state.expanded) return (
       <Card p={0} onClick={this.toggleExpand}>
         <Flex style={{ height: CARD_HEIGHT }}>
-          <TextContainer>
+          <TextContainer style={textContainerStyle}>
             <span>
               <Title my={2} pb={1} color="text">
                 {this.props.name}
@@ -181,31 +163,32 @@ class Project extends Component {
             <Text width={[1]} style={{ overflow: 'auto' }} color="text">
               {this.props.description}
             </Text>
+            <Flex
+              style={{
+                float: 'left',
+                // marginBottom: '1em'
+              }}
+            >
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={this.props.repositoryUrl}
+                />
+              </Box>
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="See project"
+                  fontAwesomeIcon="globe"
+                  url={this.props.projectUrl}
+                />
+              </Box>
+            </Flex>
           </TextContainer>
 
           <ImageContainer>
             <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
             <ProjectTag>
-              <Flex
-                style={{
-                  float: 'right',
-                }}
-              >
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="Check repository"
-                    fontAwesomeIcon="github"
-                    url={this.props.repositoryUrl}
-                  />
-                </Box>
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="See project"
-                    fontAwesomeIcon="globe"
-                    url={this.props.projectUrl}
-                  />
-                </Box>
-              </Flex>
               <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
                 {this.props.type}
               </ImageSubtitle>
@@ -215,13 +198,12 @@ class Project extends Component {
             </ProjectTag>
           </ImageContainer>
         </Flex>
-        {/* expanded Card */}
       </Card>
     )
     return(
       <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
         <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
-          <ExpandedTextContainer>
+          <ExpandedTextContainer style={textContainerStyle}>
             <span>
               <Title my={2} pb={1} color="text">
                 {this.props.name}
@@ -234,31 +216,32 @@ class Project extends Component {
             {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet2}</Text> : null}
             {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet3}</Text> : null}
             {/* {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet4}</Text> : null} */}
+            <Flex
+              style={{
+                float: 'left',
+                // marginBottom: '1em'
+              }}
+            >
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={this.props.repositoryUrl}
+                />
+              </Box>
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="See project"
+                  fontAwesomeIcon="globe"
+                  url={this.props.projectUrl}
+                />
+              </Box>
+            </Flex>
           </ExpandedTextContainer>
 
           <ImageContainer>
             <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
             <ProjectTag>
-              <Flex
-                style={{
-                  float: 'right',
-                }}
-              >
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="Check repository"
-                    fontAwesomeIcon="github"
-                    url={this.props.repositoryUrl}
-                  />
-                </Box>
-                <Box mx={1} fontSize={5}>
-                  <SocialLink
-                    name="See project"
-                    fontAwesomeIcon="globe"
-                    url={this.props.projectUrl}
-                  />
-                </Box>
-              </Flex>
               <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
                 {this.props.type}
               </ImageSubtitle>
@@ -325,7 +308,7 @@ const Projects = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} />
+              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} youtubeLink={p.youtubeLink} />
             </Fade>
           ))}
         </CardContainer>
