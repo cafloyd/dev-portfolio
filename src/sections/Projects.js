@@ -230,6 +230,10 @@ class Project extends Component {
             <Text width={[1]} style={{ overflow: 'auto' }} color="text">
               {this.props.description}
             </Text>
+            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet1}</Text> : null}
+            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet2}</Text> : null}
+            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet3}</Text> : null}
+            {/* {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet4}</Text> : null} */}
           </ExpandedTextContainer>
 
           <ImageContainer>
@@ -272,6 +276,10 @@ class Project extends Component {
 Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  bullet1: PropTypes.string,
+  bullet2: PropTypes.string,
+  bullet3: PropTypes.string,
+  youtubeLink: PropTypes.string,
   projectUrl: PropTypes.string.isRequired,
   repositoryUrl: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -295,6 +303,10 @@ const Projects = () => (
               id
               name
               description
+              bullet1
+              bullet2
+              bullet3
+              youtubeLink
               projectUrl
               repositoryUrl
               publishedDate(formatString: "MM / YYYY")
@@ -313,7 +325,7 @@ const Projects = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} />
+              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} />
             </Fade>
           ))}
         </CardContainer>
