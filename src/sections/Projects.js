@@ -5,6 +5,7 @@ import { Image, Text, Flex, Box } from 'rebass/styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import { ExpandedCardContainer, ExpandedCard } from '../components/ExpandedCard'
@@ -127,7 +128,7 @@ const ProjectTag = styled.div`
   }
 `;
 
-const textContainerStyle = {
+const containerStyle = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-around"
@@ -154,7 +155,7 @@ class Project extends Component {
     if (!this.state.expanded) return (
       <Card p={0} onClick={this.toggleExpand}>
         <Flex style={{ height: CARD_HEIGHT }}>
-          <TextContainer style={textContainerStyle}>
+          <TextContainer style={containerStyle}>
             <span>
               <Title my={2} pb={1} color="text">
                 {this.props.name}
@@ -189,7 +190,7 @@ class Project extends Component {
           <ImageContainer>
             <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
             <ProjectTag>
-              <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
+              <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
                 {this.props.type}
               </ImageSubtitle>
               <Hide query={MEDIA_QUERY_SMALL}>
@@ -203,7 +204,7 @@ class Project extends Component {
     return(
       <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
         <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
-          <ExpandedTextContainer style={textContainerStyle}>
+          <ExpandedTextContainer style={containerStyle}>
             <span>
               <Title my={2} pb={1} color="text">
                 {this.props.name}
@@ -212,10 +213,12 @@ class Project extends Component {
             <Text width={[1]} style={{ overflow: 'auto' }} color="text">
               {this.props.description}
             </Text>
-            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet1}</Text> : null}
-            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet2}</Text> : null}
-            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet3}</Text> : null}
-            {/* {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto' }} color="text">💻 {this.props.bullet4}</Text> : null} */}
+            <div>
+              {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
+              {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
+              {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
+              {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+            </div>
             <Flex
               style={{
                 float: 'left',
@@ -239,16 +242,20 @@ class Project extends Component {
             </Flex>
           </ExpandedTextContainer>
 
-          <ImageContainer>
-            <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
-            <ProjectTag>
-              <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-                {this.props.type}
-              </ImageSubtitle>
-              <Hide query={MEDIA_QUERY_SMALL}>
-                <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
-              </Hide>
-            </ProjectTag>
+          <ImageContainer style={containerStyle}>
+            {/* <div style={containerStyle}> */}
+            <div>
+              <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
+              <ProjectTag>
+                <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
+                  {this.props.type}
+                </ImageSubtitle>
+                <Hide query={MEDIA_QUERY_SMALL}>
+                  <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
+                </Hide>
+              </ProjectTag>
+            </div>
+            {this.props.youtubeLink ? <iframe width="560" height="315" src={this.props.youtubeLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> : null}
           </ImageContainer>
         </Flex>
       </ExpandedCard>
@@ -308,7 +315,7 @@ const Projects = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} youtubeLink={p.youtubeLink} />
+              <Project name={p.name} description={p.description} projectUrl={p.projectUrl} repositoryUrl={p.repositoryUrl} publishedDate={p.publishedDate} type={p.type} logo={p.logo} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} bullet4={p.bullet4} youtubeLink={p.youtubeLink} />
             </Fade>
           ))}
         </CardContainer>

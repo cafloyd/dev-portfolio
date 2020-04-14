@@ -4,6 +4,7 @@ import { Image, Text, Flex, Box } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import SocialLink from '../components/SocialLink';
@@ -124,9 +125,10 @@ const SingleExperience = ({
         {/* <Text>
           {`${startDate} - ${endDate}`}
         </Text> */}
-        <Text my={2} pb={1}>
+         <Text my={2} pb={1}>
+          <FontAwesomeIcon name="map-marker" />
           <i>
-            {location}
+            {` ${location}`}
           </i>
         </Text>
         {/* <Text width={[1]} style={{ overflow: 'auto' }}>
