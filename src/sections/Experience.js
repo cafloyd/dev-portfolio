@@ -46,6 +46,7 @@ const Background = () => (
 
 const CARD_HEIGHT = '200px';
 const EXPANDED_CARD_HEIGHT = 'auto'
+const EXPANDED_CARD_WIDTH = '100%';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -70,6 +71,18 @@ const TextContainer = styled.div`
 `;
 
 const ExpandedTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  width: calc(100% - 200px);
+
+  ${MEDIA_QUERY_SMALL} {
+    width: calc(100% - (200px / 2));
+  }
+`;
+
+const DetailedTextContainer = styled.div`
 display: flex;
 flex-direction: column;
 padding: 10px;
@@ -111,6 +124,12 @@ const ExperienceTag = styled.div`
   }
 `;
 
+const containerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around"
+}
+
 class SingleExperience extends Component {
   constructor() {
     super()
@@ -130,7 +149,7 @@ class SingleExperience extends Component {
     if (!this.state.expanded) return (
       <Card p={0} onClick={this.toggleExpand}>
         <Flex style={{ height: CARD_HEIGHT }}>
-          <TextContainer>
+          <TextContainer style={containerStyle}>
             <span>
               <Title my={2} pb={1}>
                 {this.props.title}
@@ -160,41 +179,44 @@ class SingleExperience extends Component {
       </Card>
     )
     return (
-      <Card p={0} onClick={this.toggleExpand}>
-        <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
-          <TextContainer>
-            <span>
-              <Title my={2} pb={1}>
-                {this.props.title}
-              </Title>
-              <Text>
-                {this.props.company}
+      <Card p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
+        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
+          <Flex height="200px">
+            <ExpandedTextContainer style={containerStyle}>
+              <span>
+                <Title my={2} pb={1}>
+                  {this.props.title}
+                </Title>
+                <Text>
+                  {this.props.company}
+                </Text>
+              </span>
+              <Text my={2} pb={1}>
+                <FontAwesomeIcon name="map-marker" />
+                <i>
+                  {` ${this.props.location}`}
+                </i>
               </Text>
-            </span>
+            </ExpandedTextContainer>
 
-             <Text my={2} pb={1}>
-              <FontAwesomeIcon name="map-marker" />
-              <i>
-                {` ${this.props.location}`}
-              </i>
-            </Text>
-          </TextContainer>
-
-          <ImageContainer>
-            <ExperienceImage src={this.props.companyLogo.image.src} alt={this.props.companyLogo.title} />
-            <ExperienceTag>
-              <Hide query={MEDIA_QUERY_SMALL}>
-                <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
-              </Hide>
-            </ExperienceTag>
-          </ImageContainer>
+            <ImageContainer style={containerStyle}>
+              <div>
+                <ExperienceImage src={this.props.companyLogo.image.src} alt={this.props.companyLogo.title} />
+                <ExperienceTag>
+                  <Hide query={MEDIA_QUERY_SMALL}>
+                    <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
+                  </Hide>
+                </ExperienceTag>
+              </div>
+            </ImageContainer>
+          </Flex>
+          <DetailedTextContainer>
+            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
+            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
+            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
+            {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+          </DetailedTextContainer>
         </Flex>
-        <ExpandedTextContainer>
-          {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
-          {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
-          {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
-          {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
-        </ExpandedTextContainer>
       </Card>
     );
   }

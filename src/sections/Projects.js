@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -76,14 +77,20 @@ const ExpandedTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 100%;
-  width: calc(100% - ${CARD_HEIGHT});
+  height: 200px;
+  width: calc(100% - 200px);
 
   ${MEDIA_QUERY_SMALL} {
-    width: calc(100% - (${CARD_HEIGHT} / 2));
+    width: calc(100% - (200px / 2));
   }
 `;
 
+const DetailedTextContainer = styled.div`
+display: flex;
+flex-direction: column;
+padding: 10px;
+width: 100%;
+`;
 const ImageContainer = styled.div`
   margin: auto;
   width: ${CARD_HEIGHT};
@@ -92,15 +99,12 @@ const ImageContainer = styled.div`
     width: calc(${CARD_HEIGHT} / 2);
   }
 `;
-// const ExpandedImageContainer = styled.div`
-//   margin: auto;
-//   margin-right: 0;
-//   width: ${CARD_HEIGHT};
 
-//   ${MEDIA_QUERY_SMALL} {
-//     width: calc(${EXPANDED_CARD_HEIGHT} / 2);
-//   }
-// `;
+// const videoSize = {
+//   width: 100%,
+//   // height: width/2,
+// };
+
 
 const ProjectImage = styled(Image)`
   width: ${CARD_HEIGHT};
@@ -167,7 +171,6 @@ class Project extends Component {
             <Flex
               style={{
                 float: 'left',
-                // marginBottom: '1em'
               }}
             >
               <Box mx={1} fontSize={5}>
@@ -203,60 +206,60 @@ class Project extends Component {
     )
     return (
       <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
-        <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
-          <ExpandedTextContainer style={containerStyle}>
-            <span>
-              <Title my={2} pb={1} color="text">
-                {this.props.name}
-              </Title>
-            </span>
-            <Text width={[1]} style={{ overflow: 'auto' }} color="text">
-              {this.props.description}
-            </Text>
-            <div>
-              {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
-              {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
-              {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
-              {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em' }} color="text"><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
-            </div>
-            <Flex
-              style={{
-                float: 'left',
-                // marginBottom: '1em'
-              }}
-            >
-              <Box mx={1} fontSize={5}>
-                <SocialLink
-                  name="Check repository"
-                  fontAwesomeIcon="github"
-                  url={this.props.repositoryUrl}
-                />
-              </Box>
-              <Box mx={1} fontSize={5}>
-                <SocialLink
-                  name="See project"
-                  fontAwesomeIcon="globe"
-                  url={this.props.projectUrl}
-                />
-              </Box>
-            </Flex>
-          </ExpandedTextContainer>
+        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
+          <Flex height="200px">
+            <ExpandedTextContainer style={containerStyle}>
+              <span>
+                <Title my={2} pb={1} color="text">
+                  {this.props.name}
+                </Title>
+              </span>
+              <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+                {this.props.description}
+              </Text>
+              <Flex
+                style={{
+                  float: 'left',
+                }}
+              >
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="Check repository"
+                    fontAwesomeIcon="github"
+                    url={this.props.repositoryUrl}
+                  />
+                </Box>
+                <Box mx={1} fontSize={5}>
+                  <SocialLink
+                    name="See project"
+                    fontAwesomeIcon="globe"
+                    url={this.props.projectUrl}
+                  />
+                </Box>
+              </Flex>
+            </ExpandedTextContainer>
 
-          <ImageContainer style={containerStyle}>
-            {/* <div style={containerStyle}> */}
-            <div>
-              <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
-              <ProjectTag>
-                <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
-                  {this.props.type}
-                </ImageSubtitle>
-                <Hide query={MEDIA_QUERY_SMALL}>
-                  <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
-                </Hide>
-              </ProjectTag>
-            </div>
-            {this.props.youtubeLink ? <iframe title={this.props.youtubeLink} width="560" height="315" src={this.props.youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen /> : null}
-          </ImageContainer>
+            <ImageContainer style={containerStyle}>
+              <div>
+                <ProjectImage src={this.props.logo.image.src} alt={this.props.logo.title} />
+                <ProjectTag>
+                  <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
+                    {this.props.type}
+                  </ImageSubtitle>
+                  <Hide query={MEDIA_QUERY_SMALL}>
+                    <ImageSubtitle bg="backgroundDark">{this.props.publishedDate}</ImageSubtitle>
+                  </Hide>
+                </ProjectTag>
+              </div>
+            </ImageContainer>
+          </Flex>
+          {this.props.youtubeLink ? <div padding-top="56.25%"><iframe title={this.props.youtubeLink} width="100%" src={this.props.youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : null}
+          <DetailedTextContainer>
+            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
+            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
+            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
+            {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+          </DetailedTextContainer>
         </Flex>
       </ExpandedCard>
     )
@@ -269,6 +272,7 @@ Project.propTypes = {
   bullet1: PropTypes.string,
   bullet2: PropTypes.string,
   bullet3: PropTypes.string,
+  bullet4: PropTypes.string,
   youtubeLink: PropTypes.string,
   projectUrl: PropTypes.string.isRequired,
   repositoryUrl: PropTypes.string.isRequired,
