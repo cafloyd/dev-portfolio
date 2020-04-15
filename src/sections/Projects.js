@@ -48,8 +48,8 @@ const Background = () => (
 );
 
 const CARD_HEIGHT = '200px';
-const EXPANDED_CARD_HEIGHT = '400px';
-const EXPANDED_CARD_WIDTH = 'auto';
+const EXPANDED_CARD_HEIGHT = 'auto';
+const EXPANDED_CARD_WIDTH = '100%';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -80,7 +80,7 @@ const ExpandedTextContainer = styled.div`
   width: calc(100% - ${CARD_HEIGHT});
 
   ${MEDIA_QUERY_SMALL} {
-    width: calc(100% - (${EXPANDED_CARD_HEIGHT} / 2));
+    width: calc(100% - (${CARD_HEIGHT} / 2));
   }
 `;
 
@@ -201,7 +201,7 @@ class Project extends Component {
         </Flex>
       </Card>
     )
-    return(
+    return (
       <ExpandedCard p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
         <Flex style={{ height: EXPANDED_CARD_HEIGHT }}>
           <ExpandedTextContainer style={containerStyle}>
@@ -255,7 +255,7 @@ class Project extends Component {
                 </Hide>
               </ProjectTag>
             </div>
-            {this.props.youtubeLink ? <iframe width="560" height="315" src={this.props.youtubeLink} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> : null}
+            {this.props.youtubeLink ? <iframe title={this.props.youtubeLink} width="560" height="315" src={this.props.youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen /> : null}
           </ImageContainer>
         </Flex>
       </ExpandedCard>
