@@ -1,9 +1,11 @@
-import React from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import SocialLink from '../components/SocialLink';
@@ -43,6 +45,8 @@ const Background = () => (
 );
 
 const CARD_HEIGHT = '200px';
+const EXPANDED_CARD_HEIGHT = 'auto'
+const EXPANDED_CARD_WIDTH = '100%';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -64,6 +68,25 @@ const TextContainer = styled.div`
   ${MEDIA_QUERY_SMALL} {
     width: calc(100% - (${CARD_HEIGHT} / 2));
   }
+`;
+
+const ExpandedTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  width: calc(100% - 200px);
+
+  ${MEDIA_QUERY_SMALL} {
+    width: calc(100% - (200px / 2));
+  }
+`;
+
+const DetailedTextContainer = styled.div`
+display: flex;
+flex-direction: column;
+padding: 10px;
+width: 100%;
 `;
 
 const ImageContainer = styled.div`
@@ -101,79 +124,113 @@ const ExperienceTag = styled.div`
   }
 `;
 
-const SingleExperience = ({
-  company,
-  companyLogo,
-  title,
-  startDate,
-  endDate,
-  location,
-  // descriptionOfRole,
-}) => (
-  <Card p={0}>
-    <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer>
-        <span>
-          <Title my={2} pb={1}>
-            {title}
-          </Title>
-          <Text>
-            {company}
-          </Text>
-        </span>
-        {/* <Text>
-          {`${startDate} - ${endDate}`}
-        </Text> */}
-        <Text my={2} pb={1}>
-          <i>
-            {location}
-          </i>
-        </Text>
-        {/* <Text width={[1]} style={{ overflow: 'auto' }}>
-          {descriptionOfRole}
-        </Text> */}
-      </TextContainer>
+const containerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around"
+}
 
-      <ImageContainer>
-        <ExperienceImage src={companyLogo.image.src} alt={companyLogo.title} />
-        <ExperienceTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            {/* <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See experience"
-                fontAwesomeIcon="globe"
-                url={experienceUrl}
-              />
-            </Box> */}
+class SingleExperience extends Component {
+  constructor() {
+    super()
+    this.state = {
+      expanded: false
+    }
+    this.toggleExpand = this.toggleExpand.bind(this)
+  }
+
+  toggleExpand () {
+    this.setState({
+      expanded: !this.state.expanded
+    })
+  }
+
+  render() {
+    if (!this.state.expanded) return (
+      <Card p={0} onClick={this.toggleExpand}>
+        <Flex style={{ height: CARD_HEIGHT }}>
+          <TextContainer style={containerStyle}>
+            <span>
+              <Title my={2} pb={1}>
+                {this.props.title}
+              </Title>
+              <Text>
+                {this.props.company}
+              </Text>
+            </span>
+
+             <Text my={2} pb={1}>
+              <FontAwesomeIcon name="map-marker" />
+              <i>
+                {` ${this.props.location}`}
+              </i>
+            </Text>
+          </TextContainer>
+
+          <ImageContainer>
+            <ExperienceImage src={this.props.companyLogo.image.src} alt={this.props.companyLogo.title} />
+            <ExperienceTag>
+              <Hide query={MEDIA_QUERY_SMALL}>
+                <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
+              </Hide>
+            </ExperienceTag>
+          </ImageContainer>
+        </Flex>
+      </Card>
+    )
+    return (
+      <Card p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
+        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
+          <Flex height="200px">
+            <ExpandedTextContainer style={containerStyle}>
+              <span>
+                <Title my={2} pb={1}>
+                  {this.props.title}
+                </Title>
+                <Text>
+                  {this.props.company}
+                </Text>
+              </span>
+              <Text my={2} pb={1}>
+                <FontAwesomeIcon name="map-marker" />
+                <i>
+                  {` ${this.props.location}`}
+                </i>
+              </Text>
+            </ExpandedTextContainer>
+
+            <ImageContainer style={containerStyle}>
+              <div>
+                <ExperienceImage src={this.props.companyLogo.image.src} alt={this.props.companyLogo.title} />
+                <ExperienceTag>
+                  <Hide query={MEDIA_QUERY_SMALL}>
+                    <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
+                  </Hide>
+                </ExperienceTag>
+              </div>
+            </ImageContainer>
           </Flex>
-          {/* <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            {type}
-          </ImageSubtitle> */}
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{`${startDate} - ${endDate}`}</ImageSubtitle>
-          </Hide>
-        </ExperienceTag>
-      </ImageContainer>
-    </Flex>
-  </Card>
-);
+          <DetailedTextContainer>
+            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
+            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
+            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
+            {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+          </DetailedTextContainer>
+        </Flex>
+      </Card>
+    );
+  }
+}
+
 
 SingleExperience.propTypes = {
   company: PropTypes.string.isRequired,
-  // descriptionOfRole: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  bullet1: PropTypes.string,
+  bullet2: PropTypes.string,
+  bullet3: PropTypes.string,
+  bullet4: PropTypes.string,
   startDate: PropTypes.string.isRequired,
   endDate: PropTypes.string.isRequired,
   companyLogo: PropTypes.shape({
@@ -204,6 +261,10 @@ const Experiences = () => (
               startDate(formatString: "MM / YYYY")
               endDate(formatString: "MM / YYYY")
               location
+              bullet1
+              bullet2
+              bullet3
+              bullet4
             }
           }
         }
@@ -212,7 +273,7 @@ const Experiences = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.experiences.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <SingleExperience {...p} />
+              <SingleExperience title={p.title} company={p.company} companyLogo={p.companyLogo} startDate={p.startDate} endDate={p.endDate} location={p.location} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} bullet4={p.bullet4} />
             </Fade>
           ))}
         </CardContainer>
