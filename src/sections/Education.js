@@ -1,45 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Text, Flex, Box } from 'rebass';
+import { Image, Text, Flex } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, StaticCard } from '../components/StaticCard';
-import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
-    {/* <Triangle
-      color="secondary"
-      height={['80vh', '80vh']}
-      width={['100vw', '100vw']}
-      invertX
-    /> */}
     <Triangle
       color="secondaryDark"
       height={['50vh', '40vh']}
       width={['70vw', '70vw']}
       invertX
     />
-    {/* from Experience - <Triangle
-      color="secondary"
-      height={['50vh', '40vh']}
-      width={['70vw', '40vw']}
-      invertY
-    /> */}
-
-    {/* <Triangle
-      color="background"
-      height={['50vh', '40vh']}
-      width={['70vw', '65vw']}
-      invertX
-    /> */}
-    {/* 50, 40, 70, 40 */}
-    {/* originally - 50, 30, 20, 50 */}
 
     <Triangle
       color="secondary"
@@ -133,45 +112,17 @@ const SingleEducation = ({
             {school}
           </Text>
         </span>
-        {/* <Text>
-          {`${startDate} - ${endDate}`}
-        </Text> */}
         <Text my={2} pb={1}>
+          <FontAwesomeIcon name="map-marker" />
           <i>
-            {location}
+            {` ${location}`}
           </i>
         </Text>
-        {/* <Text width={[1]} style={{ overflow: 'auto' }}>
-          {descriptionOfJob}
-        </Text> */}
       </TextContainer>
 
       <ImageContainer>
         <EducationImage src={companyLogo.image.src} alt={companyLogo.title} />
         <EducationTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            {/* <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See experience"
-                fontAwesomeIcon="globe"
-                url={experienceUrl}
-              />
-            </Box> */}
-          </Flex>
-          {/* <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            {type}
-          </ImageSubtitle> */}
           <Hide query={MEDIA_QUERY_SMALL}>
             <ImageSubtitle bg="backgroundDark">{completionDate}</ImageSubtitle>
           </Hide>
