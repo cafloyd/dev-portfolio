@@ -30,4 +30,19 @@ export const StaticCard = styled(CardRebass).attrs({
   }
 `;
 
+export const SkillCardContainer = styled.div`
+  display: grid;
+  grid-gap: 30px;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(${(props) => props.minWidth}, 1fr)
+  );
+  justify-items: center;
+
+  @media only screen and (max-width: 200px) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+`;
+
 export default StaticCard;

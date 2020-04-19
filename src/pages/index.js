@@ -6,6 +6,7 @@ import Projects from '../sections/Projects';
 // import Writing from '../sections/Writing';
 import Experience from '../sections/Experience'
 import Education from '../sections/Education'
+import Skills from '../sections/Skills'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -18,6 +19,7 @@ const IndexPage = () => (
     {/* <Writing /> */}
     <Experience />
     <Education />
+    <Skills />
     <Footer />
   </Layout>
 );
