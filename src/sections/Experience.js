@@ -273,7 +273,18 @@ const Experiences = () => (
         <CardContainer minWidth="350px">
           {contentfulAbout.experiences.map((p, i) => (
             <Fade bottom delay={i * 200} key={p.id}>
-              <SingleExperience title={p.title} company={p.company} companyLogo={p.companyLogo} startDate={p.startDate} endDate={p.endDate} location={p.location} bullet1={p.bullet1} bullet2={p.bullet2} bullet3={p.bullet3} bullet4={p.bullet4} />
+              <SingleExperience
+                title={p.title}
+                company={p.company}
+                companyLogo={p.companyLogo}
+                startDate={p.startDate}
+                endDate={p.endDate}
+                location={p.location}
+                bullet1={p.bullet1}
+                bullet2={p.bullet2}
+                bullet3={p.bullet3}
+                bullet4={p.bullet4}
+              />
             </Fade>
           ))}
         </CardContainer>
