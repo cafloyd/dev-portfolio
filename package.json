@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-mate",
+  "name": "caitlin-floyd-portfolio",
   "version": "2.5.2",
-  "description": "Gatsby v2 starter to create a top notch portfolio!",
+  "description": "Caitlin Floyd portfolio",
   "main": "index.js",
   "scripts": {
     "build": "gatsby clean && gatsby build",
@@ -16,21 +16,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EmaSuriano/gatsby-starter-mate.git"
+    "url": "git+https://github.com/cafloyd/devPortfolio"
   },
   "keywords": [
-    "gatsby",
-    "starter",
-    "contentful",
-    "PWA",
-    "portfolio"
+    "Caitlin Floyd",
+    "software",
+    "engineer",
+    "developer",
+    "full-stack",
+    "react",
+    "portfolio",
+    "Washington, DC",
+    "javascript",
+    "front-end",
+    "front-end"
   ],
-  "author": "Ema Suriano",
+  "author": "Caitlin Floyd",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EmaSuriano/gatsby-starter-mate/issues"
-  },
-  "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
+  "homepage": "https://github.com/cafloyd/devPortfolio#readme",
   "dependencies": {
     "@rebass/preset": "^4.0.5",
     "@tippy.js/react": "^3.1.1",

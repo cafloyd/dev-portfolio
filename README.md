@@ -3,7 +3,7 @@
 - [Website](https://caitlinfloyd.com)
 - [LinkedIn](https://www.linkedin.com/in/caitlinfloyd/)
 
-## Tech Stack
+## Technical Skills
 
 ### Proficient
 - JavaScript
