@@ -91,7 +91,9 @@ const About = () => (
                 </Fade>
               </Box>
             </Flex>
-            <Interests />
+            <Fade bottom>
+              <Interests />
+            </Fade>
           </div>
         );
       }}

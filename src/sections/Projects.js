@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade';
 import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
-import { ExpandedCardContainer, ExpandedCard } from '../components/ExpandedCard'
+import { ExpandedCard } from '../components/ExpandedCard'
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
@@ -59,6 +59,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
+  background: rgba(255, 255, 255, 0.3);
   border-bottom: ${(props) => props.theme.colors.sectionHeader} 5px solid;
 `;
 

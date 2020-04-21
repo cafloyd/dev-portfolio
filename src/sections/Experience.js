@@ -8,7 +8,6 @@ import Fade from 'react-reveal/Fade';
 import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
-import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
@@ -159,7 +158,7 @@ class SingleExperience extends Component {
               </Text>
             </span>
 
-             <Text my={2} pb={1}>
+            <Text my={2} pb={1}>
               <FontAwesomeIcon name="map-marker" />
               <i>
                 {` ${this.props.location}`}
