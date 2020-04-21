@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade';
 import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
-import { ExpandedCardContainer, ExpandedCard } from '../components/ExpandedCard'
+import { ExpandedCard } from '../components/ExpandedCard'
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
@@ -59,6 +59,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
+  background: rgba(255, 255, 255, 0.3);
   border-bottom: ${(props) => props.theme.colors.sectionHeader} 5px solid;
 `;
 
@@ -255,10 +256,30 @@ class Project extends Component {
           </Flex>
           {this.props.youtubeLink ? <div padding-top="56.25%"><iframe title={this.props.youtubeLink} width="100%" src={this.props.youtubeLink} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div> : null}
           <DetailedTextContainer>
-            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
-            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
-            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
-            {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+            {this.props.bullet1 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet1}
+              </Text>
+            ) : null}
+            {this.props.bullet2 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet2}
+              </Text>
+            ) : null}
+            {this.props.bullet3 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet3}
+              </Text>
+            ) : null}
+            {this.props.bullet4 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet4}
+              </Text>
+            ) : null}
           </DetailedTextContainer>
         </Flex>
       </ExpandedCard>

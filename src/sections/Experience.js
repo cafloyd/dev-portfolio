@@ -8,7 +8,6 @@ import Fade from 'react-reveal/Fade';
 import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
-import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
@@ -159,7 +158,7 @@ class SingleExperience extends Component {
               </Text>
             </span>
 
-             <Text my={2} pb={1}>
+            <Text my={2} pb={1}>
               <FontAwesomeIcon name="map-marker" />
               <i>
                 {` ${this.props.location}`}
@@ -211,10 +210,30 @@ class SingleExperience extends Component {
             </ImageContainer>
           </Flex>
           <DetailedTextContainer>
-            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
-            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
-            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
-            {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+            {this.props.bullet1 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet1}
+              </Text>
+            ) : null}
+            {this.props.bullet2 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet2}
+              </Text>
+            ) : null}
+            {this.props.bullet3 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet3}
+              </Text>
+            ) : null}
+            {this.props.bullet4 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet4}
+              </Text>
+            ) : null}
           </DetailedTextContainer>
         </Flex>
       </Card>
