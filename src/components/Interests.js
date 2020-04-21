@@ -213,7 +213,7 @@ class Interests extends Component {
         </div>
         <div>
           <p style={{margin: "2em"}}>{"I've been very lucky to live in some amazing places (before DC, I lived in New York; Philadelphia; and Osaka, Japan) and to travel to even more. Whether I am somewhere new or familiar, I love to wander and take pictures of interesting or beautiful things I see."}</p>
-          <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
+          <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap", alignItems: "center"}}>
             <InstagramEmbed
               url='https://www.instagram.com/p/BytaFy1gUqb/'
               maxWidth={320}
