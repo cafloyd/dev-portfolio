@@ -323,11 +323,11 @@ class Interests extends Component {
         <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around"}}>
           <div>
             <p>{"Here's what I've been listening to recently."}</p>
-            <iframe src="https://open.spotify.com/embed/playlist/6Dia1sJOOHqcPqqSI912SL" title="2020 playlist" width="300" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media" />
+            <iframe src="https://open.spotify.com/embed/playlist/6Dia1sJOOHqcPqqSI912SL" title="2020 playlist" width="300" height="380" frameBorder="0" allow="encrypted-media" />
           </div>
           <div>
             <p>{"This is what I listen to when I'm coding."}</p>
-            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn" title="lo-fi playlist" width="300" height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media" />
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn" title="lo-fi playlist" width="300" height="380" frameBorder="0" allow="encrypted-media" />
           </div>
         </div>
       </div>
