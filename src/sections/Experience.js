@@ -211,10 +211,30 @@ class SingleExperience extends Component {
             </ImageContainer>
           </Flex>
           <DetailedTextContainer>
-            {this.props.bullet1 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet1}</Text> : null}
-            {this.props.bullet2 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet2}</Text> : null}
-            {this.props.bullet3 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet3}</Text> : null}
-            {this.props.bullet4 ? <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}><FontAwesomeIcon name="caret-right" /> {this.props.bullet4}</Text> : null}
+            {this.props.bullet1 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet1}
+              </Text>
+            ) : null}
+            {this.props.bullet2 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet2}
+              </Text>
+            ) : null}
+            {this.props.bullet3 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet3}
+              </Text>
+            ) : null}
+            {this.props.bullet4 ? (
+              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
+                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+                {this.props.bullet4}
+              </Text>
+            ) : null}
           </DetailedTextContainer>
         </Flex>
       </Card>
