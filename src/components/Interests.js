@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import FontAwesomeIcon from 'react-fontawesome'
 import InstagramEmbed from 'react-instagram-embed'
-import '../../public/style.css'
+import '../../public/interests.css'
 
 class Interests extends Component {
   constructor() {
