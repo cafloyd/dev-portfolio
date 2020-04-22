@@ -83,6 +83,7 @@ const About = () => (
               >
                 <Fade right>
                   <ProfilePicture
+                    className="prof-pic"
                     src={profile.image.src}
                     alt={profile.title}
                     mt={[4, 4, 0]}

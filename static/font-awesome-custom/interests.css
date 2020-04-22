@@ -29,6 +29,14 @@ button.active {
   border: white;
 }
 
+.prof-pic {
+  filter: grayscale(80%);
+}
+
+.prof-pic:hover {
+  filter: grayscale(10%)
+}
+
 .gr_custom_container_1587436473 {
   /* customize your Goodreads widget container here*/
   border: 1px solid gray;

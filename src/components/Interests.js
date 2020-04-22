@@ -217,6 +217,7 @@ class Interests extends Component {
             <InstagramEmbed
               url='https://www.instagram.com/p/BytaFy1gUqb/'
               maxWidth={320}
+              margin="1em"
               hideCaption={true}
               containerTagName='div'
               protocol=''
