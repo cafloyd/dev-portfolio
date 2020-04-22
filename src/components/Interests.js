@@ -251,18 +251,6 @@ class Interests extends Component {
               onFailure={() => {}}
             />
             <InstagramEmbed
-              url='https://www.instagram.com/p/B8zKjnLJ3V2/'
-              maxWidth={320}
-              hideCaption={true}
-              containerTagName='div'
-              protocol=''
-              injectScript
-              onLoading={() => {}}
-              onSuccess={() => {}}
-              onAfterRender={() => {}}
-              onFailure={() => {}}
-            />
-            <InstagramEmbed
               url='https://www.instagram.com/p/BxEZUs-gD5w/'
               maxWidth={320}
               hideCaption={true}
@@ -275,7 +263,7 @@ class Interests extends Component {
               onFailure={() => {}}
             />
             <InstagramEmbed
-              url='https://www.instagram.com/p/BwVVO3eAVp-/'
+              url='https://www.instagram.com/p/BLFD4hwAuhH/'
               maxWidth={320}
               hideCaption={true}
               containerTagName='div'
@@ -286,7 +274,18 @@ class Interests extends Component {
               onAfterRender={() => {}}
               onFailure={() => {}}
             />
-
+            <InstagramEmbed
+              url='https://www.instagram.com/p/Bh-HiouF9m_/'
+              maxWidth={320}
+              hideCaption={true}
+              containerTagName='div'
+              protocol=''
+              injectScript
+              onLoading={() => {}}
+              onSuccess={() => {}}
+              onAfterRender={() => {}}
+              onFailure={() => {}}
+            />
           </div>
         </div>
       </div>
