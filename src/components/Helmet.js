@@ -25,39 +25,11 @@ const Helmet = ({ theme = {} }) => (
               src
             }
           }
-          profile {
-            favicon16: resize(width: 16) {
-              src
-            }
-            favicon32: resize(width: 32) {
-              src
-            }
-            bigIcon: resize(width: 192) {
-              src
-            }
-            appleIcon: resize(width: 180) {
-              src
-            }
-          }
-          favicon {
-            favicon16: resize(width: 16) {
-              src
-            }
-            favicon32: resize(width: 32) {
-              src
-            }
-            bigIcon: resize(width: 192) {
-              src
-            }
-            appleIcon: resize(width: 180) {
-              src
-            }
-          }
         }
       }
     `}
-    render={data => {
-      const { name, description, profile, favicon } = data.contentfulAbout;
+    render={(data) => {
+      const { name, description, favicon } = data.contentfulAbout;
       const title = `${name} Portfolio`;
 
       return (

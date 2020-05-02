@@ -1,0 +1,340 @@
+[
+  {
+    "ts": "2020-05-01T15:02:46.623Z",
+    "level": "error",
+    "error": {
+      "name": "BadRequest",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "ntiequ7mc6q6"
+            }
+          },
+          "id": "project",
+          "type": "ContentType",
+          "createdAt": "2018-09-07T23:18:52.188Z",
+          "updatedAt": "2018-09-07T23:18:56.446Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "2XGcyQ3vKgm55htxMAIqsM"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "2XGcyQ3vKgm55htxMAIqsM"
+            }
+          },
+          "publishedCounter": 1,
+          "version": 2,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "2XGcyQ3vKgm55htxMAIqsM"
+            }
+          },
+          "publishedVersion": 1,
+          "firstPublishedAt": "2018-09-07T23:18:56.446Z",
+          "publishedAt": "2018-09-07T23:18:56.446Z"
+        },
+        "displayField": "name",
+        "name": "Project",
+        "description": "Project description",
+        "fields": [
+          {
+            "id": "name",
+            "name": "Name",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "publishedDate",
+            "name": "PublishedDate",
+            "type": "Date",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "logo",
+            "name": "Logo",
+            "type": "Link",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false,
+            "linkType": "Asset"
+          },
+          {
+            "id": "repositoryUrl",
+            "name": "RepositoryUrl",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "description",
+            "name": "Description",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "projectUrl",
+            "name": "ProjectUrl",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "type",
+            "name": "Type",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          }
+        ]
+      },
+      "data": {
+        "status": 400,
+        "statusText": "Bad Request",
+        "message": "You need to omit a field before deleting it",
+        "details": {},
+        "request": {
+          "url": "content_types/project",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.import/7.7.5; feature library-import; sdk contentful-management.js/5.19.0; platform node.js/v14.1.0; os macOS/19.4.0;",
+            "Authorization": "Bearer ...L6f3g",
+            "user-agent": "node.js/v14.1.0",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 12,
+            "Content-Length": 1067
+          },
+          "method": "put",
+          "payloadData": "{\"displayField\":\"name\",\"name\":\"Project\",\"description\":\"Project description\",\"fields\":[{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"publishedDate\",\"name\":\"PublishedDate\",\"type\":\"Date\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"logo\",\"name\":\"Logo\",\"type\":\"Link\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"linkType\":\"Asset\"},{\"id\":\"repositoryUrl\",\"name\":\"RepositoryUrl\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"description\",\"name\":\"Description\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"projectUrl\",\"name\":\"ProjectUrl\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"type\",\"name\":\"Type\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false}]}"
+        },
+        "requestId": "6f8cf497eb68b12b6341e06f92ca5585"
+      }
+    }
+  },
+  {
+    "ts": "2020-05-01T15:02:46.646Z",
+    "level": "error",
+    "error": {
+      "name": "BadRequest",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "ntiequ7mc6q6"
+            }
+          },
+          "id": "about",
+          "type": "ContentType",
+          "createdAt": "2018-09-07T23:18:52.234Z",
+          "updatedAt": "2018-09-17T12:05:25.813Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "2XGcyQ3vKgm55htxMAIqsM"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "2XGcyQ3vKgm55htxMAIqsM"
+            }
+          },
+          "publishedCounter": 5,
+          "version": 10,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "2XGcyQ3vKgm55htxMAIqsM"
+            }
+          },
+          "publishedVersion": 9,
+          "firstPublishedAt": "2018-09-07T23:18:58.249Z",
+          "publishedAt": "2018-09-17T12:05:25.813Z"
+        },
+        "displayField": "name",
+        "name": "About",
+        "description": "All information related to personal data.",
+        "fields": [
+          {
+            "id": "name",
+            "name": "Name",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "description",
+            "name": "Description",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "roles",
+            "name": "Roles",
+            "type": "Array",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false,
+            "items": {
+              "type": "Symbol",
+              "validations": []
+            }
+          },
+          {
+            "id": "socialLinks",
+            "name": "Social Links",
+            "type": "Array",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false,
+            "items": {
+              "type": "Link",
+              "validations": [
+                {
+                  "linkContentType": ["socialLink"]
+                }
+              ],
+              "linkType": "Entry"
+            }
+          },
+          {
+            "id": "profile",
+            "name": "Profile",
+            "type": "Link",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false,
+            "linkType": "Asset"
+          },
+          {
+            "id": "aboutMe",
+            "name": "About me",
+            "type": "Text",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "mediumUser",
+            "name": "Medium User",
+            "type": "Symbol",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false
+          },
+          {
+            "id": "projects",
+            "name": "Projects",
+            "type": "Array",
+            "localized": false,
+            "required": false,
+            "validations": [],
+            "disabled": false,
+            "omitted": false,
+            "items": {
+              "type": "Link",
+              "validations": [
+                {
+                  "linkContentType": ["project"]
+                }
+              ],
+              "linkType": "Entry"
+            }
+          }
+        ]
+      },
+      "data": {
+        "status": 400,
+        "statusText": "Bad Request",
+        "message": "You need to omit a field before deleting it",
+        "details": {},
+        "request": {
+          "url": "content_types/about",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.import/7.7.5; feature library-import; sdk contentful-management.js/5.19.0; platform node.js/v14.1.0; os macOS/19.4.0;",
+            "Authorization": "Bearer ...L6f3g",
+            "user-agent": "node.js/v14.1.0",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 18,
+            "Content-Length": 1444
+          },
+          "method": "put",
+          "payloadData": "{\"displayField\":\"name\",\"name\":\"About\",\"description\":\"All information related to personal data.\",\"fields\":[{\"id\":\"name\",\"name\":\"Name\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"description\",\"name\":\"Description\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"roles\",\"name\":\"Roles\",\"type\":\"Array\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"items\":{\"type\":\"Symbol\",\"validations\":[]}},{\"id\":\"socialLinks\",\"name\":\"Social Links\",\"type\":\"Array\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"items\":{\"type\":\"Link\",\"validations\":[{\"linkContentType\":[\"socialLink\"]}],\"linkType\":\"Entry\"}},{\"id\":\"profile\",\"name\":\"Profile\",\"type\":\"Link\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"linkType\":\"Asset\"},{\"id\":\"aboutMe\",\"name\":\"About me\",\"type\":\"Text\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"mediumUser\",\"name\":\"Medium User\",\"type\":\"Symbol\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false},{\"id\":\"projects\",\"name\":\"Projects\",\"type\":\"Array\",\"localized\":false,\"required\":false,\"validations\":[],\"disabled\":false,\"omitted\":false,\"items\":{\"type\":\"Link\",\"validations\":[{\"linkContentType\":[\"project\"]}],\"linkType\":\"Entry\"}}]}"
+        },
+        "requestId": "815c7728cca51ea0a484d6580862f99a"
+      }
+    }
+  }
+]
