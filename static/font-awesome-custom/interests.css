@@ -1,9 +1,9 @@
 /* @import "../colors.js"; */
 :root {
   --primary: #66b2b2;
-  --primaryLight: #B1F8F2;
+  --primaryLight: #b1f8f2;
   --primaryDark: #086375;
-  --background: #FFFFFF;
+  --background: #ffffff;
   --backgroundDark: #c2dfe3;
 }
 
@@ -14,7 +14,7 @@ button {
   font-size: 10pt;
   border-radius: 30pt;
   border: var(--primaryLight);
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 button:hover {
@@ -30,17 +30,13 @@ button.active {
 }
 
 .prof-pic {
-  filter: grayscale(80%);
-}
-
-.prof-pic:hover {
-  filter: grayscale(10%)
+  filter: grayscale(10%);
 }
 
 .gr_custom_container_1587436473 {
   /* customize your Goodreads widget container here*/
   border: 1px solid gray;
-  border-radius:10px;
+  border-radius: 10px;
   padding: 10px 5px 10px 5px;
   background-color: var(--background);
   color: #000000;
@@ -70,10 +66,10 @@ button.active {
   /* customize your book covers here */
   overflow: hidden;
   height: 60px;
-    float: left;
-    margin-right: 4px;
-    width: 39px;
-    color: var(--primary);
+  float: left;
+  margin-right: 4px;
+  width: 39px;
+  color: var(--primary);
 }
 .gr_custom_title_1587436473 {
   font-size: 14px;
@@ -89,10 +85,10 @@ a {
 }
 
 .instagram-media {
-  background: #FFF;
+  background: #fff;
   border: 0;
   border-radius: 3px;
-  box-shadow: 0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
   margin: 1px;
   max-width: 540px;
   min-width: 326px;
@@ -107,7 +103,7 @@ a {
 }
 
 .instaStyle3 {
-  background: #FFFFFF;
+  background: #ffffff;
   line-height: 0;
   padding: 0 0;
   text-align: center;
@@ -122,7 +118,7 @@ a {
 }
 
 .instaStyle5 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 50%;
   flex-grow: 0;
   height: 40px;
@@ -138,7 +134,7 @@ a {
 }
 
 .instaStyle7 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 4px;
   flex-grow: 0;
   height: 14px;
@@ -147,7 +143,7 @@ a {
 }
 
 .instaStyle8 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 4px;
   flex-grow: 0;
   height: 14px;
@@ -171,7 +167,7 @@ a {
 
 .instaStyle12 {
   color: #3897f0;
-  font-family: Arial,sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 550;
@@ -190,7 +186,7 @@ a {
 }
 
 .instaStyle15 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 50%;
   height: 12.5px;
   width: 12.5px;
@@ -198,7 +194,7 @@ a {
 }
 
 .instaStyle16 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   height: 12.5px;
   transform: rotate(-45deg) translateX(3px) translateY(1px);
   width: 12.5px;
@@ -208,7 +204,7 @@ a {
 }
 
 .instaStyle17 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 50%;
   height: 12.5px;
   width: 12.5px;
@@ -220,7 +216,7 @@ a {
 }
 
 .instaStyle19 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 50%;
   flex-grow: 0;
   height: 20px;
@@ -242,13 +238,13 @@ a {
 
 .instaStyle22 {
   width: 0px;
-  border-top: 8px solid #F4F4F4;
+  border-top: 8px solid #f4f4f4;
   border-right: 8px solid transparent;
   transform: translateY(16px);
 }
 
 .instaStyle23 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   flex-grow: 0;
   height: 12px;
   width: 16px;
@@ -258,7 +254,7 @@ a {
 .instaStyle24 {
   width: 0;
   height: 0;
-  border-top: 8px solid #F4F4F4;
+  border-top: 8px solid #f4f4f4;
   border-left: 8px solid transparent;
   transform: translateY(-4px) translateX(8px);
 }
@@ -272,7 +268,7 @@ a {
 }
 
 .instaStyle26 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 4px;
   flex-grow: 0;
   height: 14px;
@@ -281,16 +277,16 @@ a {
 }
 
 .instaStyle27 {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 4px;
   flex-grow: 0;
   height: 14px;
-  width: 144px
+  width: 144px;
 }
 
 .instaStyle28 {
   color: #c9c8cd;
-  font-family: Arial,sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 17px;
   margin-bottom: 0;
@@ -299,21 +295,21 @@ a {
   padding: 8px 0 7px;
   text-align: center;
   text-overflow: ellipsis;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .instaStyle29 {
   color: #c9c8cd;
-  font-family: Arial,sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
   line-height: 17px;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .instaStyle30 {
-  font-family: Arial,sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
-  line-height: 17px
+  line-height: 17px;
 }
