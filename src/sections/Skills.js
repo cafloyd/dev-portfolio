@@ -44,15 +44,13 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${props => props.theme.colors.sectionHeader} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.sectionHeader} 5px solid;
 `;
 
 const ImageContainer = styled.div`
   margin: auto;
   width: ${CARD_HEIGHT};
-  height: ${CARD_HEIGHT}
-
-  ${MEDIA_QUERY_SMALL} {
+  height: ${CARD_HEIGHT} ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
   }
 `;
@@ -83,10 +81,7 @@ const SkillTag = styled.div`
   }
 `;
 
-const Skill = ({
-  skillName,
-  skillImage
-}) => (
+const Skill = ({ skillName, skillImage }) => (
   <StaticCard p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <ImageContainer>
@@ -120,7 +115,37 @@ const Skills = () => (
       query={graphql`
         query TechnicalSkillsQuery {
           contentfulAbout {
-            technicalSkills {
+            computerLanguages {
+              id
+              skillName
+              skillImage {
+                title
+                image: resize(width: 200, height: 200, quality: 100) {
+                  src
+                }
+              }
+            }
+            frontEnd {
+              id
+              skillName
+              skillImage {
+                title
+                image: resize(width: 200, height: 200, quality: 100) {
+                  src
+                }
+              }
+            }
+            backEnd {
+              id
+              skillName
+              skillImage {
+                title
+                image: resize(width: 200, height: 200, quality: 100) {
+                  src
+                }
+              }
+            }
+            tools {
               id
               skillName
               skillImage {
@@ -145,26 +170,136 @@ const Skills = () => (
       `}
       render={({ contentfulAbout }) => (
         <div>
-          <Title margin="1em">
-            Technical Skills
-          </Title>
-          <CardContainer minWidth="200px">
-            {contentfulAbout.technicalSkills.map((p, i) => (
-              <Fade bottom delay={i * 50} key={p.id}>
-                <Skill skillName={p.skillName} skillImage={p.skillImage} />
-              </Fade>
-            ))}
-          </CardContainer>
-          <Title margin="1em" marginTop="2em">
-            Language Skills
-          </Title>
-          <CardContainer minWidth="200px">
-            {contentfulAbout.languageSkills.map((p, i) => (
-              <Fade bottom delay={i * 100} key={p.id}>
-                <Skill skillName={p.skillName} skillImage={p.skillImage} />
-              </Fade>
-            ))}
-          </CardContainer>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              marginTop: '3em',
+            }}
+          >
+            <div>
+              <Title margin="1em">(Computer) Languages:</Title>
+            </div>
+            <CardContainer
+              minWidth="200px"
+              marginLeft="10em"
+              style={{
+                width: '85%',
+                marginLeft: '15%',
+              }}
+            >
+              {contentfulAbout.computerLanguages.map((p, i) => (
+                <Fade bottom delay={i * 50} key={p.id}>
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                </Fade>
+              ))}
+            </CardContainer>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              marginTop: '3em',
+            }}
+          >
+            <div>
+              <Title margin="1em">Front End:</Title>
+            </div>
+            <CardContainer
+              minWidth="200px"
+              marginLeft="10em"
+              style={{
+                width: '85%',
+                marginLeft: '15%',
+              }}
+            >
+              {contentfulAbout.frontEnd.map((p, i) => (
+                <Fade bottom delay={i * 50} key={p.id}>
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                </Fade>
+              ))}
+            </CardContainer>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              marginTop: '3em',
+            }}
+          >
+            <div>
+              <Title margin="1em">Back End:</Title>
+            </div>
+            <CardContainer
+              minWidth="200px"
+              marginLeft="10em"
+              style={{
+                width: '85%',
+                marginLeft: '15%',
+              }}
+            >
+              {contentfulAbout.backEnd.map((p, i) => (
+                <Fade bottom delay={i * 50} key={p.id}>
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                </Fade>
+              ))}
+            </CardContainer>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              marginTop: '3em',
+            }}
+          >
+            <div>
+              <Title margin="1em">Tools:</Title>
+            </div>
+            <CardContainer
+              minWidth="200px"
+              marginLeft="10em"
+              style={{
+                width: '85%',
+                marginLeft: '15%',
+              }}
+            >
+              {contentfulAbout.tools.map((p, i) => (
+                <Fade bottom delay={i * 50} key={p.id}>
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                </Fade>
+              ))}
+            </CardContainer>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              marginTop: '3em',
+            }}
+          >
+            <div>
+              <Title margin="1em">(Human) Languages:</Title>
+            </div>
+            <CardContainer
+              minWidth="200px"
+              marginLeft="10em"
+              style={{
+                width: '85%',
+                marginLeft: '15%',
+              }}
+            >
+              {contentfulAbout.languageSkills.map((p, i) => (
+                <Fade bottom delay={i * 50} key={p.id}>
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                </Fade>
+              ))}
+            </CardContainer>
+          </div>
         </div>
       )}
     />
