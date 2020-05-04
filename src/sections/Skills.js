@@ -201,7 +201,7 @@ const Skills = () => (
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '5em',
+              marginTop: '7em',
               alignItems: 'center',
             }}
           >
@@ -227,7 +227,7 @@ const Skills = () => (
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '5em',
+              marginTop: '7em',
               alignItems: 'center',
             }}
           >
@@ -253,7 +253,7 @@ const Skills = () => (
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '5em',
+              marginTop: '7em',
               alignItems: 'center',
             }}
           >
@@ -279,7 +279,7 @@ const Skills = () => (
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '5em',
+              marginTop: '7em',
               alignItems: 'center',
             }}
           >
