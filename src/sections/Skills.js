@@ -35,7 +35,7 @@ const Background = () => (
   </div>
 );
 
-const CARD_HEIGHT = '200px';
+const CARD_HEIGHT = '150px';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -173,20 +173,20 @@ const Skills = () => (
           <div
             style={{
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'row',
               justifyContent: 'space-between',
               marginTop: '3em',
+              alignItems: 'center',
             }}
           >
-            <div>
+            <div width="15%" paddingTop="2em">
               <Title margin="1em">(Computer) Languages:</Title>
             </div>
             <CardContainer
-              minWidth="200px"
+              minWidth="150px"
               marginLeft="10em"
               style={{
                 width: '85%',
-                marginLeft: '15%',
               }}
             >
               {contentfulAbout.computerLanguages.map((p, i) => (
@@ -199,20 +199,20 @@ const Skills = () => (
           <div
             style={{
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '3em',
+              marginTop: '5em',
+              alignItems: 'center',
             }}
           >
-            <div>
+            <div width="15%" paddingTop="2em">
               <Title margin="1em">Front End:</Title>
             </div>
             <CardContainer
-              minWidth="200px"
+              minWidth="150px"
               marginLeft="10em"
               style={{
                 width: '85%',
-                marginLeft: '15%',
               }}
             >
               {contentfulAbout.frontEnd.map((p, i) => (
@@ -225,20 +225,20 @@ const Skills = () => (
           <div
             style={{
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '3em',
+              marginTop: '5em',
+              alignItems: 'center',
             }}
           >
-            <div>
+            <div width="15%" paddingTop="2em">
               <Title margin="1em">Back End:</Title>
             </div>
             <CardContainer
-              minWidth="200px"
+              minWidth="150px"
               marginLeft="10em"
               style={{
                 width: '85%',
-                marginLeft: '15%',
               }}
             >
               {contentfulAbout.backEnd.map((p, i) => (
@@ -251,20 +251,20 @@ const Skills = () => (
           <div
             style={{
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '3em',
+              marginTop: '5em',
+              alignItems: 'center',
             }}
           >
-            <div>
+            <div width="15%" paddingTop="2em">
               <Title margin="1em">Tools:</Title>
             </div>
             <CardContainer
-              minWidth="200px"
+              minWidth="150px"
               marginLeft="10em"
               style={{
                 width: '85%',
-                marginLeft: '15%',
               }}
             >
               {contentfulAbout.tools.map((p, i) => (
@@ -277,20 +277,20 @@ const Skills = () => (
           <div
             style={{
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '3em',
+              marginTop: '5em',
+              alignItems: 'center',
             }}
           >
-            <div>
+            <div width="15%" paddingTop="2em">
               <Title margin="1em">(Human) Languages:</Title>
             </div>
             <CardContainer
-              minWidth="200px"
+              minWidth="150px"
               marginLeft="10em"
               style={{
                 width: '85%',
-                marginLeft: '15%',
               }}
             >
               {contentfulAbout.languageSkills.map((p, i) => (
