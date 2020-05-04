@@ -176,6 +176,7 @@ const Skills = () => (
               flexDirection: 'row',
               justifyContent: 'space-between',
               marginTop: '3em',
+              marginBottom: '3em',
               alignItems: 'center',
             }}
           >
@@ -186,7 +187,7 @@ const Skills = () => (
               minWidth="150px"
               marginLeft="10em"
               style={{
-                width: '85%',
+                width: '80%',
               }}
             >
               {contentfulAbout.computerLanguages.map((p, i) => (
@@ -196,12 +197,14 @@ const Skills = () => (
               ))}
             </CardContainer>
           </div>
+          <hr color="#c2dfe3" />
           <div
             style={{
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '7em',
+              marginTop: '3em',
+              marginBottom: '3em',
               alignItems: 'center',
             }}
           >
@@ -212,7 +215,7 @@ const Skills = () => (
               minWidth="150px"
               marginLeft="10em"
               style={{
-                width: '85%',
+                width: '80%',
               }}
             >
               {contentfulAbout.frontEnd.map((p, i) => (
@@ -222,12 +225,14 @@ const Skills = () => (
               ))}
             </CardContainer>
           </div>
+          <hr color="#c2dfe3" />
           <div
             style={{
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '7em',
+              marginTop: '3em',
+              marginBottom: '3em',
               alignItems: 'center',
             }}
           >
@@ -238,7 +243,7 @@ const Skills = () => (
               minWidth="150px"
               marginLeft="10em"
               style={{
-                width: '85%',
+                width: '80%',
               }}
             >
               {contentfulAbout.backEnd.map((p, i) => (
@@ -248,12 +253,14 @@ const Skills = () => (
               ))}
             </CardContainer>
           </div>
+          <hr color="#c2dfe3" />
           <div
             style={{
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '7em',
+              marginTop: '3em',
+              marginBottom: '3em',
               alignItems: 'center',
             }}
           >
@@ -264,7 +271,7 @@ const Skills = () => (
               minWidth="150px"
               marginLeft="10em"
               style={{
-                width: '85%',
+                width: '80%',
               }}
             >
               {contentfulAbout.tools.map((p, i) => (
@@ -274,12 +281,14 @@ const Skills = () => (
               ))}
             </CardContainer>
           </div>
+          <hr color="#c2dfe3" />
           <div
             style={{
               display: 'flex',
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: '7em',
+              marginTop: '3em',
+              marginBottom: '3em',
               alignItems: 'center',
             }}
           >
@@ -290,7 +299,7 @@ const Skills = () => (
               minWidth="150px"
               marginLeft="10em"
               style={{
-                width: '85%',
+                width: '80%',
               }}
             >
               {contentfulAbout.languageSkills.map((p, i) => (
