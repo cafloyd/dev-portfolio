@@ -119,6 +119,7 @@ class Interests extends Component {
           <div
             style={{
               display: 'flex',
+              flexWrap: 'wrap',
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-around',

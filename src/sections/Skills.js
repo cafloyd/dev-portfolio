@@ -62,10 +62,10 @@ const SkillImage = styled(Image)`
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
-    height: calc(${CARD_HEIGHT} / 2);
-    width: calc(${CARD_HEIGHT} / 2);
-    margin-top: calc(${CARD_HEIGHT} / 4);
-    padding: 10px;
+    height: ${CARD_HEIGHT};
+    width: ${CARD_HEIGHT};
+    margin-top: 0px;
+    padding: 40px;
   }
 `;
 
@@ -77,7 +77,7 @@ const SkillTag = styled.div`
   ); /*don't know why I have to add 3.5px here ... */
 
   ${MEDIA_QUERY_SMALL} {
-    top: calc(-${CARD_HEIGHT} - 3.5px + (${CARD_HEIGHT} / 4));
+    top: calc(-${CARD_HEIGHT} - 3.5px);
   }
 `;
 
@@ -87,11 +87,9 @@ const Skill = ({ skillName, skillImage }) => (
       <ImageContainer>
         <SkillImage src={skillImage.image.src} alt={skillName} />
         <SkillTag>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
-              {skillName}
-            </ImageSubtitle>
-          </Hide>
+          <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
+            {skillName}
+          </ImageSubtitle>
         </SkillTag>
       </ImageContainer>
     </Flex>
