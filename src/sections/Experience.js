@@ -44,7 +44,7 @@ const Background = () => (
 );
 
 const CARD_HEIGHT = '200px';
-const EXPANDED_CARD_HEIGHT = 'auto'
+const EXPANDED_CARD_HEIGHT = 'auto';
 const EXPANDED_CARD_WIDTH = '100%';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
@@ -54,7 +54,7 @@ const Title = styled(Text)`
   font-weight: 600;
   text-transform: uppercase;
   display: table;
-  border-bottom: ${props => props.theme.colors.sectionHeader} 5px solid;
+  border-bottom: ${(props) => props.theme.colors.sectionHeader} 5px solid;
 `;
 
 const TextContainer = styled.div`
@@ -82,10 +82,10 @@ const ExpandedTextContainer = styled.div`
 `;
 
 const DetailedTextContainer = styled.div`
-display: flex;
-flex-direction: column;
-padding: 10px;
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
 `;
 
 const ImageContainer = styled.div`
@@ -94,6 +94,7 @@ const ImageContainer = styled.div`
 
   ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
+    margin-top: 15%;
   }
 `;
 
@@ -124,113 +125,148 @@ const ExperienceTag = styled.div`
 `;
 
 const containerStyle = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-around"
-}
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-around',
+};
 
 class SingleExperience extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      expanded: false
-    }
-    this.toggleExpand = this.toggleExpand.bind(this)
+      expanded: false,
+    };
+    this.toggleExpand = this.toggleExpand.bind(this);
   }
 
-  toggleExpand () {
+  toggleExpand() {
     this.setState({
-      expanded: !this.state.expanded
-    })
+      expanded: !this.state.expanded,
+    });
   }
 
   render() {
-    if (!this.state.expanded) return (
-      <Card p={0} onClick={this.toggleExpand}>
-        <Flex style={{ height: CARD_HEIGHT }}>
-          <TextContainer style={containerStyle}>
-            <span>
-              <Title my={2} pb={1}>
-                {this.props.title}
-              </Title>
-              <Text>
-                {this.props.company}
+    if (!this.state.expanded)
+      return (
+        <Card p={0} onClick={this.toggleExpand}>
+          <Flex style={{ height: CARD_HEIGHT }}>
+            <TextContainer style={containerStyle}>
+              <span>
+                <Title my={2} pb={1}>
+                  {this.props.title}
+                </Title>
+                <Text>{this.props.company}</Text>
+              </span>
+
+              <Text my={2} pb={1}>
+                <FontAwesomeIcon name="map-marker" />
+                <i>{` ${this.props.location}`}</i>
               </Text>
-            </span>
+            </TextContainer>
 
-            <Text my={2} pb={1}>
-              <FontAwesomeIcon name="map-marker" />
-              <i>
-                {` ${this.props.location}`}
-              </i>
-            </Text>
-          </TextContainer>
-
-          <ImageContainer>
-            <ExperienceImage src={this.props.companyLogo.image.src} alt={this.props.companyLogo.title} />
-            <ExperienceTag>
-              <Hide query={MEDIA_QUERY_SMALL}>
+            <ImageContainer>
+              <ExperienceImage
+                src={this.props.companyLogo.image.src}
+                alt={this.props.companyLogo.title}
+              />
+              <ExperienceTag>
                 <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
-              </Hide>
-            </ExperienceTag>
-          </ImageContainer>
-        </Flex>
-      </Card>
-    )
+              </ExperienceTag>
+            </ImageContainer>
+          </Flex>
+        </Card>
+      );
     return (
       <Card p={0} width={EXPANDED_CARD_WIDTH} onClick={this.toggleExpand}>
-        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: "column" }}>
+        <Flex style={{ height: EXPANDED_CARD_HEIGHT, flexDirection: 'column' }}>
           <Flex height="200px">
             <ExpandedTextContainer style={containerStyle}>
               <span>
                 <Title my={2} pb={1}>
                   {this.props.title}
                 </Title>
-                <Text>
-                  {this.props.company}
-                </Text>
+                <Text>{this.props.company}</Text>
               </span>
               <Text my={2} pb={1}>
                 <FontAwesomeIcon name="map-marker" />
-                <i>
-                  {` ${this.props.location}`}
-                </i>
+                <i>{` ${this.props.location}`}</i>
               </Text>
             </ExpandedTextContainer>
 
             <ImageContainer style={containerStyle}>
               <div>
-                <ExperienceImage src={this.props.companyLogo.image.src} alt={this.props.companyLogo.title} />
+                <ExperienceImage
+                  src={this.props.companyLogo.image.src}
+                  alt={this.props.companyLogo.title}
+                />
                 <ExperienceTag>
-                  <Hide query={MEDIA_QUERY_SMALL}>
-                    <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
-                  </Hide>
+                  <ImageSubtitle bg="backgroundDark">{`${this.props.startDate} - ${this.props.endDate}`}</ImageSubtitle>
                 </ExperienceTag>
               </div>
             </ImageContainer>
           </Flex>
           <DetailedTextContainer>
             {this.props.bullet1 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+              <Text
+                width={[1]}
+                style={{
+                  overflow: 'auto',
+                  paddingBottom: '.5em',
+                  display: 'flex',
+                }}
+              >
+                <FontAwesomeIcon
+                  name="caret-right"
+                  style={{ paddingRight: '.5em' }}
+                />
                 {this.props.bullet1}
               </Text>
             ) : null}
             {this.props.bullet2 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+              <Text
+                width={[1]}
+                style={{
+                  overflow: 'auto',
+                  paddingBottom: '.5em',
+                  display: 'flex',
+                }}
+              >
+                <FontAwesomeIcon
+                  name="caret-right"
+                  style={{ paddingRight: '.5em' }}
+                />
                 {this.props.bullet2}
               </Text>
             ) : null}
             {this.props.bullet3 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+              <Text
+                width={[1]}
+                style={{
+                  overflow: 'auto',
+                  paddingBottom: '.5em',
+                  display: 'flex',
+                }}
+              >
+                <FontAwesomeIcon
+                  name="caret-right"
+                  style={{ paddingRight: '.5em' }}
+                />
                 {this.props.bullet3}
               </Text>
             ) : null}
             {this.props.bullet4 ? (
-              <Text width={[1]} style={{ overflow: 'auto', paddingBottom: '.5em', display: 'flex' }}>
-                <FontAwesomeIcon name="caret-right" style={{paddingRight: ".5em"}} />
+              <Text
+                width={[1]}
+                style={{
+                  overflow: 'auto',
+                  paddingBottom: '.5em',
+                  display: 'flex',
+                }}
+              >
+                <FontAwesomeIcon
+                  name="caret-right"
+                  style={{ paddingRight: '.5em' }}
+                />
                 {this.props.bullet4}
               </Text>
             ) : null}
@@ -240,7 +276,6 @@ class SingleExperience extends Component {
     );
   }
 }
-
 
 SingleExperience.propTypes = {
   company: PropTypes.string.isRequired,

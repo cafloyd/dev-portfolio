@@ -10,7 +10,6 @@ import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import SocialLink from '../components/SocialLink';
-import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
@@ -87,6 +86,7 @@ const ImageContainer = styled.div`
 
   ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
+    margin-top: 15%;
   }
 `;
 
@@ -161,11 +161,9 @@ class SingleEducation extends Component {
                 alt={this.props.companyLogo.title}
               />
               <EducationTag>
-                <Hide query={MEDIA_QUERY_SMALL}>
-                  <ImageSubtitle bg="backgroundDark">
-                    {this.props.completionDate}
-                  </ImageSubtitle>
-                </Hide>
+                <ImageSubtitle bg="backgroundDark">
+                  {this.props.completionDate}
+                </ImageSubtitle>
               </EducationTag>
             </ImageContainer>
           </Flex>
@@ -194,11 +192,9 @@ class SingleEducation extends Component {
                 alt={this.props.companyLogo.title}
               />
               <EducationTag>
-                <Hide query={MEDIA_QUERY_SMALL}>
-                  <ImageSubtitle bg="backgroundDark">
-                    {this.props.completionDate}
-                  </ImageSubtitle>
-                </Hide>
+                <ImageSubtitle bg="backgroundDark">
+                  {this.props.completionDate}
+                </ImageSubtitle>
               </EducationTag>
             </ImageContainer>
           </Flex>
