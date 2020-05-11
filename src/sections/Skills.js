@@ -9,6 +9,7 @@ import Section from '../components/Section';
 import { CardContainer, StaticCard } from '../components/StaticCard';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
+import '../../static/font-awesome-custom/interests.css';
 import Hide from '../components/Hide';
 
 const Background = () => (
@@ -168,25 +169,16 @@ const Skills = () => (
       `}
       render={({ contentfulAbout }) => (
         <div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: '3em',
-              marginBottom: '3em',
-              alignItems: 'center',
-            }}
-          >
-            <div width="15%" paddingTop="2em">
+          <div className="skills-wrapper">
+            <div className="skills-title">
               <Title margin="1em">(Computer) Languages:</Title>
             </div>
             <CardContainer
               minWidth="150px"
-              marginLeft="10em"
               style={{
                 width: '80%',
               }}
+              className="card-container"
             >
               {contentfulAbout.computerLanguages.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
@@ -196,25 +188,16 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c2dfe3" />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: '3em',
-              marginBottom: '3em',
-              alignItems: 'center',
-            }}
-          >
-            <div width="15%" paddingTop="2em">
+          <div className="skills-wrapper">
+            <div className="skills-title">
               <Title margin="1em">Front End:</Title>
             </div>
             <CardContainer
               minWidth="150px"
-              marginLeft="10em"
               style={{
                 width: '80%',
               }}
+              className="card-container"
             >
               {contentfulAbout.frontEnd.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
@@ -224,25 +207,16 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c2dfe3" />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: '3em',
-              marginBottom: '3em',
-              alignItems: 'center',
-            }}
-          >
-            <div width="15%" paddingTop="2em">
+          <div className="skills-wrapper">
+            <div className="skills-title">
               <Title margin="1em">Back End:</Title>
             </div>
             <CardContainer
               minWidth="150px"
-              marginLeft="10em"
               style={{
                 width: '80%',
               }}
+              className="card-container"
             >
               {contentfulAbout.backEnd.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
@@ -252,25 +226,16 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c2dfe3" />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: '3em',
-              marginBottom: '3em',
-              alignItems: 'center',
-            }}
-          >
-            <div width="15%" paddingTop="2em">
+          <div className="skills-wrapper">
+            <div className="skills-title">
               <Title margin="1em">Tools:</Title>
             </div>
             <CardContainer
               minWidth="150px"
-              marginLeft="10em"
               style={{
                 width: '80%',
               }}
+              className="card-container"
             >
               {contentfulAbout.tools.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
@@ -280,25 +245,16 @@ const Skills = () => (
             </CardContainer>
           </div>
           <hr color="#c2dfe3" />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: '3em',
-              marginBottom: '3em',
-              alignItems: 'center',
-            }}
-          >
-            <div width="15%" paddingTop="2em">
+          <div className="skills-wrapper">
+            <div className="skills-title">
               <Title margin="1em">(Human) Languages:</Title>
             </div>
             <CardContainer
               minWidth="150px"
-              marginLeft="10em"
               style={{
                 width: '80%',
               }}
+              className="card-container"
             >
               {contentfulAbout.languageSkills.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>

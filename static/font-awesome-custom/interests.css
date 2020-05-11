@@ -1,10 +1,39 @@
-/* @import "../colors.js"; */
 :root {
   --primary: #66b2b2;
   --primaryLight: #b1f8f2;
   --primaryDark: #086375;
   --background: #ffffff;
   --backgroundDark: #c2dfe3;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  align-items: center;
+}
+.skills-title {
+  width: 15%;
+  padding-top: 2em;
+}
+.card-container {
+  min-width: 150px;
+  width: 80%;
+}
+
+@media only screen and (max-width: 400px) {
+  .skills-wrapper {
+    flex-direction: column;
+  }
+  .skills-title {
+    width: 100%;
+  }
+  .card-container {
+    width: 100%;
+    /* margin-left: 0em; */
+  }
 }
 
 button {
