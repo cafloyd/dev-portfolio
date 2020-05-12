@@ -22,6 +22,9 @@
   min-width: 150px;
   width: 80%;
 }
+.nav-bar {
+  margin-right: [0, 3, 5];
+}
 
 @media only screen and (max-width: 400px) {
   .skills-wrapper {
@@ -32,7 +35,17 @@
   }
   .card-container {
     width: 100%;
-    /* margin-left: 0em; */
+  }
+  .nav-bar {
+    width: 100%;
+    background-color: rgba(8, 99, 117, 0.9);
+    /* border: 1pt solid #c2dfe3; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.25em;
+    margin-left: 0;
+    height: 100%;
   }
 }
 
