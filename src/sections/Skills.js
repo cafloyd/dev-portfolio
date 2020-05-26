@@ -11,6 +11,7 @@ import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import '../../static/font-awesome-custom/interests.css';
 import Hide from '../components/Hide';
+import { circle } from '@fortawesome/free-regular-svg-icons';
 
 const Background = () => (
   <div>
@@ -39,6 +40,8 @@ const Background = () => (
 const CARD_HEIGHT = '150px';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
+
+// const regularCircle = {{circle} style={{color: "#086375"}}}
 
 const Title = styled(Text)`
   font-size: 14px;
@@ -82,7 +85,7 @@ const SkillTag = styled.div`
   }
 `;
 
-const Skill = ({ skillName, skillImage }) => (
+const Skill = ({ skillName, skillRating, skillImage }) => (
   <StaticCard p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <ImageContainer>
@@ -91,6 +94,56 @@ const Skill = ({ skillName, skillImage }) => (
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
             {skillName}
           </ImageSubtitle>
+          {skillRating === 1 ? (
+            <ImageSubtitle>
+              <FontAwesomeIcon
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+              {/* <FontAwesomeIcon 
+                // icon={ far fa-circle } 
+                name="dot-circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+              <FontAwesomeIcon 
+                name="dot-circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              /> */}
+              <FontAwesomeIcon icon={circle} />
+            </ImageSubtitle>
+          ) : null}
+          {skillRating === 2 ? (
+            <ImageSubtitle>
+              <FontAwesomeIcon
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+              <FontAwesomeIcon
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+              <FontAwesomeIcon
+                name="circle-notch"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+            </ImageSubtitle>
+          ) : null}
+          {skillRating === 3 ? (
+            <ImageSubtitle>
+              <FontAwesomeIcon
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+              <FontAwesomeIcon
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+              <FontAwesomeIcon
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#086375' }}
+              />
+            </ImageSubtitle>
+          ) : null}
         </SkillTag>
       </ImageContainer>
     </Flex>
@@ -99,6 +152,7 @@ const Skill = ({ skillName, skillImage }) => (
 
 Skill.propTypes = {
   skillName: PropTypes.string.isRequired,
+  skillRating: PropTypes.number,
   skillImage: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
@@ -117,6 +171,7 @@ const Skills = () => (
             computerLanguages {
               id
               skillName
+              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -127,6 +182,7 @@ const Skills = () => (
             frontEnd {
               id
               skillName
+              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -137,6 +193,7 @@ const Skills = () => (
             backEnd {
               id
               skillName
+              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -147,6 +204,7 @@ const Skills = () => (
             tools {
               id
               skillName
+              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -157,6 +215,7 @@ const Skills = () => (
             languageSkills {
               id
               skillName
+              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -182,7 +241,11 @@ const Skills = () => (
             >
               {contentfulAbout.computerLanguages.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                  <Skill
+                    skillName={p.skillName}
+                    skillRating={p.skillRating}
+                    skillImage={p.skillImage}
+                  />
                 </Fade>
               ))}
             </CardContainer>
@@ -201,7 +264,11 @@ const Skills = () => (
             >
               {contentfulAbout.frontEnd.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                  <Skill
+                    skillName={p.skillName}
+                    skillRating={p.skillRating}
+                    skillImage={p.skillImage}
+                  />
                 </Fade>
               ))}
             </CardContainer>
@@ -220,7 +287,11 @@ const Skills = () => (
             >
               {contentfulAbout.backEnd.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                  <Skill
+                    skillName={p.skillName}
+                    skillRating={p.skillRating}
+                    skillImage={p.skillImage}
+                  />
                 </Fade>
               ))}
             </CardContainer>
@@ -239,7 +310,11 @@ const Skills = () => (
             >
               {contentfulAbout.tools.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                  <Skill
+                    skillName={p.skillName}
+                    skillRating={p.skillRating}
+                    skillImage={p.skillImage}
+                  />
                 </Fade>
               ))}
             </CardContainer>
@@ -258,7 +333,11 @@ const Skills = () => (
             >
               {contentfulAbout.languageSkills.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
+                  <Skill
+                    skillName={p.skillName}
+                    skillRating={p.skillRating}
+                    skillImage={p.skillImage}
+                  />
                 </Fade>
               ))}
             </CardContainer>
