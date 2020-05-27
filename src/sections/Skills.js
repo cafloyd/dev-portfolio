@@ -4,7 +4,6 @@ import { Image, Text, Flex } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
-import FontAwesomeIcon from 'react-fontawesome';
 import Section from '../components/Section';
 import { CardContainer, StaticCard } from '../components/StaticCard';
 import Triangle from '../components/Triangle';
@@ -91,56 +90,6 @@ const Skill = ({ skillName, skillRating, skillImage }) => (
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right">
             {skillName}
           </ImageSubtitle>
-          {skillRating === 1 ? (
-            <ImageSubtitle>
-              <div display="flex" flexDirection="column">
-                <FontAwesomeIcon
-                  name="circle"
-                  style={{ paddingLeft: '.5em', color: '#086375' }}
-                />
-                <FontAwesomeIcon
-                  name="circle"
-                  style={{ paddingLeft: '.5em', color: '#EAEBED' }}
-                />
-                <FontAwesomeIcon
-                  name="circle"
-                  style={{ paddingLeft: '.5em', color: '#EAEBED' }}
-                />
-              </div>
-            </ImageSubtitle>
-          ) : null}
-          {skillRating === 2 ? (
-            <ImageSubtitle>
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#EAEBED' }}
-              />
-            </ImageSubtitle>
-          ) : null}
-          {skillRating === 3 ? (
-            <ImageSubtitle>
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-            </ImageSubtitle>
-          ) : null}
         </SkillTag>
       </ImageContainer>
     </Flex>
@@ -149,7 +98,6 @@ const Skill = ({ skillName, skillRating, skillImage }) => (
 
 Skill.propTypes = {
   skillName: PropTypes.string.isRequired,
-  skillRating: PropTypes.number,
   skillImage: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
@@ -168,7 +116,6 @@ const Skills = () => (
             computerLanguages {
               id
               skillName
-              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -179,7 +126,6 @@ const Skills = () => (
             frontEnd {
               id
               skillName
-              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -190,7 +136,6 @@ const Skills = () => (
             backEnd {
               id
               skillName
-              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -201,7 +146,6 @@ const Skills = () => (
             tools {
               id
               skillName
-              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -212,7 +156,6 @@ const Skills = () => (
             languageSkills {
               id
               skillName
-              skillRating
               skillImage {
                 title
                 image: resize(width: 200, height: 200, quality: 100) {
@@ -238,11 +181,7 @@ const Skills = () => (
             >
               {contentfulAbout.computerLanguages.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill
-                    skillName={p.skillName}
-                    skillRating={p.skillRating}
-                    skillImage={p.skillImage}
-                  />
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
                 </Fade>
               ))}
             </CardContainer>
@@ -261,11 +200,7 @@ const Skills = () => (
             >
               {contentfulAbout.frontEnd.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill
-                    skillName={p.skillName}
-                    skillRating={p.skillRating}
-                    skillImage={p.skillImage}
-                  />
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
                 </Fade>
               ))}
             </CardContainer>
@@ -284,11 +219,7 @@ const Skills = () => (
             >
               {contentfulAbout.backEnd.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill
-                    skillName={p.skillName}
-                    skillRating={p.skillRating}
-                    skillImage={p.skillImage}
-                  />
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
                 </Fade>
               ))}
             </CardContainer>
@@ -307,11 +238,7 @@ const Skills = () => (
             >
               {contentfulAbout.tools.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill
-                    skillName={p.skillName}
-                    skillRating={p.skillRating}
-                    skillImage={p.skillImage}
-                  />
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
                 </Fade>
               ))}
             </CardContainer>
@@ -330,11 +257,7 @@ const Skills = () => (
             >
               {contentfulAbout.languageSkills.map((p, i) => (
                 <Fade bottom delay={i * 50} key={p.id}>
-                  <Skill
-                    skillName={p.skillName}
-                    skillRating={p.skillRating}
-                    skillImage={p.skillImage}
-                  />
+                  <Skill skillName={p.skillName} skillImage={p.skillImage} />
                 </Fade>
               ))}
             </CardContainer>
