@@ -10,8 +10,6 @@ import { CardContainer, StaticCard } from '../components/StaticCard';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import '../../static/font-awesome-custom/interests.css';
-import Hide from '../components/Hide';
-import { circle } from '@fortawesome/free-regular-svg-icons';
 
 const Background = () => (
   <div>
@@ -40,8 +38,6 @@ const Background = () => (
 const CARD_HEIGHT = '150px';
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
-
-// const regularCircle = {{circle} style={{color: "#086375"}}}
 
 const Title = styled(Text)`
   font-size: 14px;
@@ -96,20 +92,20 @@ const Skill = ({ skillName, skillRating, skillImage }) => (
           </ImageSubtitle>
           {skillRating === 1 ? (
             <ImageSubtitle>
-              <FontAwesomeIcon
-                name="circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-              {/* <FontAwesomeIcon 
-                // icon={ far fa-circle } 
-                name="dot-circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              />
-              <FontAwesomeIcon 
-                name="dot-circle"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
-              /> */}
-              <FontAwesomeIcon icon={circle} />
+              <div display="flex" flexDirection="column">
+                <FontAwesomeIcon
+                  name="circle"
+                  style={{ paddingLeft: '.5em', color: '#086375' }}
+                />
+                <FontAwesomeIcon
+                  name="circle"
+                  style={{ paddingLeft: '.5em', color: '#EAEBED' }}
+                />
+                <FontAwesomeIcon
+                  name="circle"
+                  style={{ paddingLeft: '.5em', color: '#EAEBED' }}
+                />
+              </div>
             </ImageSubtitle>
           ) : null}
           {skillRating === 2 ? (
@@ -123,8 +119,8 @@ const Skill = ({ skillName, skillRating, skillImage }) => (
                 style={{ paddingLeft: '.5em', color: '#086375' }}
               />
               <FontAwesomeIcon
-                name="circle-notch"
-                style={{ paddingLeft: '.5em', color: '#086375' }}
+                name="circle"
+                style={{ paddingLeft: '.5em', color: '#EAEBED' }}
               />
             </ImageSubtitle>
           ) : null}
