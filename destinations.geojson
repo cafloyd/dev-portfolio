@@ -33,6 +33,28 @@
         "type": "Point"
       }
     },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Washington, DC",
+        "description": "Washington, DC"
+      },
+      "geometry": {
+        "coordinates": [38.9072, -77.0369],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Williamsburg, VA",
+        "description": "Williamsburg, VA"
+      },
+      "geometry": {
+        "coordinates": [37.2707, -76.7075],
+        "type": "Point"
+      }
+    },
   ],
   "type": "FeatureCollection"
 }
