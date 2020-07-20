@@ -1,5 +1,7 @@
 # Caitlin Floyd - Portfolio
 
+![Portfolio demo](./media/demo-portfolio.gif)
+
 - [Website](https://caitlinfloyd.com)
 - [LinkedIn](https://www.linkedin.com/in/caitlinfloyd/)
 
