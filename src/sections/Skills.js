@@ -170,7 +170,7 @@ const Skills = () => (
         <div>
           <div className="skills-wrapper">
             <div className="skills-title">
-              <Title margin="1em">(Computer) Languages:</Title>
+              <Title margin="1em">(Programming) Languages:</Title>
             </div>
             <CardContainer
               minWidth="150px"
