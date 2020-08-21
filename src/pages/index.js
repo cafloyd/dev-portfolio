@@ -9,9 +9,11 @@ import Education from '../sections/Education';
 import Skills from '../sections/Skills';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+// import MobileNav from '../components/MobileNav'
 
 const IndexPage = () => (
   <Layout>
+    {/* <MobileNav /> */}
     <Header />
     <Landing />
     <About />
