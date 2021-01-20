@@ -4,7 +4,6 @@ import { Heading, Box } from 'rebass/styled-components';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
-// import SocialLink from '../components/SocialLink';
 import '../../static/font-awesome-custom/interests.css';
 import '../../static/font-awesome-custom/ig.css';
 
@@ -24,7 +23,7 @@ const Background = () => (
     />
 
     <Triangle
-      color="secondaryLight"
+      color="backgroundDark"
       height={['10vh', '20vh']}
       width={['50vw', '50vw']}
       invertX
@@ -37,35 +36,33 @@ const IGPage = () => (
   <Layout>
     <Section.Container id="ig" Background={Background}>
       <Box width={[320, 400, 600]} m="auto" className="igBox">
-        <Heading
-          color="primaryDark"
-          textAlign="center"
-          fontSize={[5, 6]}
-          as="h1"
-          paddingBottom=".3em"
-        >
-          Caitlin Floyd
-        </Heading>
-        <Heading
-          color="secondary"
-          fontSize={[4, 5]}
-          as="h2"
-          textAlign="center"
-          paddingBottom="1em"
-        >
-          Links
-        </Heading>
+        <div className="igHeadings">
+          <Heading
+            color="primaryDark"
+            textAlign="center"
+            fontSize={[5, 6]}
+            as="h1"
+            paddingBottom=".3em"
+          >
+            Caitlin Floyd
+          </Heading>
+          <Heading
+            color="secondary"
+            fontSize={[4, 5]}
+            as="h2"
+            textAlign="center"
+            paddingBottom="1em"
+          >
+            Links
+          </Heading>
+        </div>
         <div className="linksContainer">
           <a
             href="https://msha.ke/30flirtyfilm/"
             target="blank"
             className="igLink"
           >
-            <button
-              type="button"
-              style={{ marginLeft: '1.5em' }}
-              className="igButton"
-            >
+            <button type="button" className="igButton">
               Justice for Breonna Taylor
             </button>
           </a>
@@ -74,11 +71,7 @@ const IGPage = () => (
             target="blank"
             className="igLink"
           >
-            <button
-              type="button"
-              style={{ marginLeft: '1.5em' }}
-              className="igButton"
-            >
+            <button type="button" className="igButton">
               Split a Donation to 70+ Racial Justice Causes
             </button>
           </a>
@@ -87,11 +80,7 @@ const IGPage = () => (
             target="blank"
             className="igLink"
           >
-            <button
-              type="button"
-              style={{ marginLeft: '1.5em' }}
-              className="igButton"
-            >
+            <button type="button" className="igButton">
               Template for Employer Accountability
             </button>
           </a>
@@ -100,11 +89,7 @@ const IGPage = () => (
             target="blank"
             className="igLink"
           >
-            <button
-              type="button"
-              style={{ marginLeft: '1.5em' }}
-              className="igButton"
-            >
+            <button type="button" className="igButton">
               Black-Owned Restaurants in DC
             </button>
           </a>

@@ -6,6 +6,16 @@
   --backgroundDark: #c2dfe3;
 }
 
+#ig {
+  display: flex;
+  justify-content: center;
+}
+
+.igBox {
+  display: flex;
+  flex-direction: column;
+}
+
 .linksContainer {
   display: flex;
   flex-direction: column;
@@ -15,6 +25,7 @@
 .igButton {
   width: 100%;
   font-size: medium;
+  margin-bottom: 10px;
 }
 .socialLink {
   color: var(--background);
@@ -32,11 +43,8 @@
 }
 
 @media only screen and (max-width: 400px) {
-  /* .igButton {
-        width: 75%;
-    } */
-  .igBox {
-    padding-right: 2em;
+  .linksContainer {
+    /* padding-right: 2em; */
   }
 }
 @media only screen and (min-width: 400px) {
