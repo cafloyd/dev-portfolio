@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
-import { Text, Box, Link, Flex } from 'rebass/styled-components';
+import { Text, Box, Flex } from 'rebass/styled-components';
 import Fade from 'react-reveal/Fade';
 import SocialLink from './SocialLink';
 
