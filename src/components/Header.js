@@ -21,7 +21,6 @@ const styles = {
     height: '30px',
     left: '36px',
     top: '36px',
-    // zIndex: '10',
   },
   bmBurgerBars: {
     background: '#373a47',

@@ -1,9 +1,7 @@
-import React, { Fragment } from 'react';
-import { Flex, Image } from 'rebass/styled-components';
+import React from 'react';
+import { Flex } from 'rebass/styled-components';
 import { elastic as Menu } from 'react-burger-menu';
 import Hide from './Hide';
-import RouteLink from './RouteLink';
-import Initials from './Logo/Initials.svg';
 
 const MEDIA_QUERY_LARGE = '@media (min-width: 401px)';
 

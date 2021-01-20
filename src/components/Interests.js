@@ -1,9 +1,9 @@
+/* eslint-disable react/jsx-boolean-value */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import FontAwesomeIcon from 'react-fontawesome';
 import InstagramEmbed from 'react-instagram-embed';
-import ReactMapGL from 'react-map-gl';
 import '../../static/font-awesome-custom/interests.css';
 
 class Interests extends Component {
@@ -420,9 +420,11 @@ class Interests extends Component {
           </div>
           <div>
             <p style={{ margin: '2em' }}>
-              {
-                "I've been very lucky to live in some amazing places (before DC, I lived in New York; Philadelphia; and Osaka, Japan) and to travel to even more. Whether I am somewhere new or familiar, I love to wander and take pictures of interesting or beautiful things I see."
-              }
+              I&#39;ve been very lucky to live in some amazing places (before
+              DC, I lived in New York; Philadelphia; and Osaka, Japan) and to
+              travel to even more. Whether I am somewhere new or familiar, I
+              love to wander and take pictures of interesting or beautiful
+              things I see.
             </p>
             <div
               style={{
@@ -591,7 +593,7 @@ class Interests extends Component {
             }}
           >
             <div>
-              <p>{"Here's what I've been listening to recently:"}</p>
+              <p>Here&#39;s what I&#39;ve been listening to recently:</p>
               <iframe
                 src="https://open.spotify.com/embed/playlist/6Dia1sJOOHqcPqqSI912SL"
                 title="2020 playlist"
@@ -602,7 +604,7 @@ class Interests extends Component {
               />
             </div>
             <div>
-              <p>{"This is what I listen to when I'm coding:"}</p>
+              <p>This is what I listen to when I&#39;m coding:</p>
               <iframe
                 src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn"
                 title="lo-fi playlist"

@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Image, Text, Flex, Box } from 'rebass';
+import { Image, Text, Flex } from 'rebass';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -10,7 +10,6 @@ import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
-import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
@@ -35,11 +34,6 @@ const Background = () => (
       invertX
       invertY
     />
-    {/* <Triangle
-      color="primary"
-      height={['25vh', '20vh']}
-      width={['100vw', '100vw']}
-    /> */}
   </div>
 );
 

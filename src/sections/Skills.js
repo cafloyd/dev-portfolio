@@ -81,7 +81,7 @@ const SkillTag = styled.div`
   }
 `;
 
-const Skill = ({ skillName, skillRating, skillImage }) => (
+const Skill = ({ skillName, skillImage }) => (
   <StaticCard p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <ImageContainer>

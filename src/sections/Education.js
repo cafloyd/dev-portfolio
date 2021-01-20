@@ -233,9 +233,9 @@ class SingleEducation extends Component {
                     href="https://caitlinamyfloyd.wordpress.com/sample-lesson-plans/"
                     style={{ paddingRight: '.25em' }}
                   >
-                    Sample lesson plans{' '}
+                    Sample lesson plans
                   </a>
-                  {' from the practicum'}
+                  &nbsp;from the practicum
                 </Text>
                 <Text
                   width={[1]}
@@ -252,7 +252,7 @@ class SingleEducation extends Component {
                   Sample teaching videos from the practicum:
                 </Text>
                 <iframe
-                  title={this.props.youtubeLink}
+                  title={this.props.youtubeLink1}
                   width="100%"
                   src={this.props.youtubeLink1}
                   frameBorder="0"
@@ -264,7 +264,7 @@ class SingleEducation extends Component {
             {this.props.youtubeLink2 ? (
               <div padding-top="56.25%">
                 <iframe
-                  title={this.props.youtubeLink}
+                  title={this.props.youtubeLink2}
                   width="100%"
                   src={this.props.youtubeLink2}
                   frameBorder="0"
