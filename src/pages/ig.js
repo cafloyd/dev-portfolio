@@ -1,8 +1,10 @@
 import React from 'react';
+import FontAwesomeIcon from 'react-fontawesome';
 import { Heading, Box } from 'rebass/styled-components';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
+// import SocialLink from '../components/SocialLink';
 import '../../static/font-awesome-custom/interests.css';
 import '../../static/font-awesome-custom/ig.css';
 
@@ -38,11 +40,20 @@ const IGPage = () => (
         <Heading
           color="primaryDark"
           textAlign="center"
-          fontSize={[4, 5]}
+          fontSize={[5, 6]}
           as="h1"
-          paddingBottom="1em"
+          paddingBottom=".3em"
         >
           Caitlin Floyd
+        </Heading>
+        <Heading
+          color="secondary"
+          fontSize={[4, 5]}
+          as="h2"
+          textAlign="center"
+          paddingBottom="1em"
+        >
+          Links
         </Heading>
         <div className="linksContainer">
           <a
@@ -98,6 +109,38 @@ const IGPage = () => (
             </button>
           </a>
         </div>
+      </Box>
+      <Box className="footer">
+        <button className="footerButton" type="button">
+          <a
+            href="https://www.instagram.com/caitlinfloyd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="socialLink"
+          >
+            <FontAwesomeIcon name="fab fa-instagram" />
+          </a>
+        </button>
+        <button className="footerButton" type="button">
+          <a
+            href="https://github.com/cafloyd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="socialLink"
+          >
+            <FontAwesomeIcon name="fab fa-github" />
+          </a>
+        </button>
+        <button className="footerButton" type="button">
+          <a
+            href="https://caitlinfloyd.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="socialLink"
+          >
+            <FontAwesomeIcon name="fab fa-globe" />
+          </a>
+        </button>
       </Box>
     </Section.Container>
   </Layout>

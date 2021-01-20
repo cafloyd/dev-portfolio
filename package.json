@@ -35,7 +35,10 @@
   "license": "MIT",
   "homepage": "https://github.com/cafloyd/devPortfolio#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@rebass/preset": "^4.0.5",
     "@tippy.js/react": "^3.1.1",
     "contentful": "^7.14.2",

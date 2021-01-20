@@ -1,3 +1,11 @@
+:root {
+  --primary: #66b2b2;
+  --primaryLight: #b1f8f2;
+  --primaryDark: #086375;
+  --background: #ffffff;
+  --backgroundDark: #c2dfe3;
+}
+
 .linksContainer {
   display: flex;
   flex-direction: column;
@@ -7,6 +15,20 @@
 .igButton {
   width: 100%;
   font-size: medium;
+}
+.socialLink {
+  color: var(--background);
+  font-size: medium;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footerButton {
+  background-color: var(--primaryDark);
+  margin: 1em;
+  border-radius: 50%;
+  padding: 0.75em;
 }
 
 @media only screen and (max-width: 400px) {
