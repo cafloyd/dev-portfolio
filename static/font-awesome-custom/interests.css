@@ -65,7 +65,7 @@ button {
 button:hover {
   background-color: var(--backgroundDark);
   color: var(--primaryDark);
-  border: white;
+  border: var(--primaryDark);
 }
 
 button.active {

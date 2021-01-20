@@ -1,0 +1,24 @@
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.igButton {
+  width: 100%;
+  font-size: medium;
+}
+
+@media only screen and (max-width: 400px) {
+  /* .igButton {
+        width: 75%;
+    } */
+  .igBox {
+    padding-right: 2em;
+  }
+}
+@media only screen and (min-width: 400px) {
+  .igBox {
+    width: [320, 400, 600];
+  }
+}
