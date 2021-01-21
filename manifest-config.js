@@ -1,7 +1,7 @@
 const colors = require('./colors');
 
 module.exports = {
-  name: 'Caitlin FLoyd',
+  name: 'Caitlin Floyd',
   short_name: 'Caitlin Floyd',
   start_url: '/',
   background_color: colors.background,
