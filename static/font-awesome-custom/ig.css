@@ -44,11 +44,6 @@
   height: 40px;
 }
 
-@media only screen and (max-width: 400px) {
-  .linksContainer {
-    /* padding-right: 2em; */
-  }
-}
 @media only screen and (min-width: 400px) {
   .igBox {
     width: [320, 400, 600];
