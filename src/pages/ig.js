@@ -58,15 +58,6 @@ const IGPage = () => (
         </div>
         <div className="linksContainer">
           <a
-            href="https://msha.ke/30flirtyfilm/"
-            target="blank"
-            className="igLink"
-          >
-            <button type="button" className="igButton">
-              Justice for Breonna Taylor
-            </button>
-          </a>
-          <a
             href="https://secure.actblue.com/donate/bail_funds_george_floyd"
             target="blank"
             className="igLink"
@@ -76,21 +67,39 @@ const IGPage = () => (
             </button>
           </a>
           <a
-            href="https://www.patreon.com/posts/37737054"
-            target="blank"
-            className="igLink"
-          >
-            <button type="button" className="igButton">
-              Template for Employer Accountability
-            </button>
-          </a>
-          <a
             href="https://www.feedthemalik.com/post/dc-black-owned-open-covid-19"
             target="blank"
             className="igLink"
           >
             <button type="button" className="igButton">
               Black-Owned Restaurants in DC
+            </button>
+          </a>
+          <a
+            href="https://www.ihollaback.org/bystanderintervention/"
+            target="blank"
+            className="igLink"
+          >
+            <button type="button" className="igButton">
+              Bystander Intervention Training
+            </button>
+          </a>
+          <a
+            href="https://www.advancingjustice-aajc.org/publication/resources-asian-american-community-anti-blackness"
+            target="blank"
+            className="igLink"
+          >
+            <button type="button" className="igButton">
+              Resources for the Asian American Community on Anti-Blackness
+            </button>
+          </a>
+          <a
+            href="https://www.patreon.com/posts/37737054"
+            target="blank"
+            className="igLink"
+          >
+            <button type="button" className="igButton">
+              Template for Employer Accountability
             </button>
           </a>
         </div>
