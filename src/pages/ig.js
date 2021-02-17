@@ -102,6 +102,15 @@ const IGPage = () => (
               Template for Employer Accountability
             </button>
           </a>
+          <a
+            href="https://drive.google.com/drive/folders/0Bz011IF2Pu9TUWIxVWxybGJ1Ync"
+            target="blank"
+            className="igLink"
+          >
+            <button type="button" className="igButton">
+              Black History Month Education Resources
+            </button>
+          </a>
         </div>
       </Box>
       <Box className="footer">
