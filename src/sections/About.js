@@ -7,7 +7,6 @@ import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
 import markdownRenderer from '../components/MarkdownRenderer';
-import Interests from '../components/Interests'
 
 const Background = () => (
   <div>
@@ -92,9 +91,6 @@ const About = () => (
                 </Fade>
               </Box>
             </Flex>
-            <Fade bottom>
-              <Interests />
-            </Fade>
           </div>
         );
       }}
