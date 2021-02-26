@@ -13,7 +13,7 @@ import '../../static/font-awesome-custom/interests.css';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryDark"
+      color="primaryMedium"
       height={['50vh', '40vh']}
       width={['70vw', '70vw']}
       invertX

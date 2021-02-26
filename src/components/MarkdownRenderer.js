@@ -20,7 +20,7 @@ const StyledLink = styled.a`
     content: '';
     width: 100%;
     height: 3px;
-    background-color: ${(props) => props.theme.colors.primaryLight};
+    background-color: ${(props) => props.theme.colors.primaryDark};
     transition: all 250ms;
   }
 

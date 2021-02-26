@@ -1,7 +1,7 @@
 :root {
   --primary: #66b2b2;
-  --primaryLight: #b1f8f2;
-  --primaryDark: #086375;
+  --primaryDark: #b1f8f2;
+  --primaryMedium: #086375;
   --background: #ffffff;
   --backgroundDark: #c2dfe3;
 }
@@ -36,7 +36,7 @@
   justify-content: center;
 }
 .footerButton {
-  background-color: var(--primaryDark);
+  background-color: var(--primaryMedium);
   margin: 1em;
   border-radius: 50%;
   padding: 0.75em;

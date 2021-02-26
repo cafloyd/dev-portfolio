@@ -20,7 +20,7 @@ const Background = () => (
     />
 
     <Triangle
-      color="secondaryLight"
+      color="primaryDark"
       height={['10vh', '20vh']}
       width={['50vw', '50vw']}
       invertX
@@ -34,13 +34,13 @@ const NotFoundPage = () => (
     <Section.Container id="404" Background={Background}>
       <Box width={[320, 400, 600]} m="auto">
         <Heading
-          color="primaryDark"
+          color="primaryMedium"
           fontSize={['9rem', '13rem', '16rem']}
           as="h1"
         >
           404
         </Heading>
-        <Heading color="secondary" fontSize={['4rem', '5rem', '6rem']} as="h2">
+        <Heading color="primary" fontSize={['4rem', '5rem', '6rem']} as="h2">
           There isn&apos;t anything here
         </Heading>
       </Box>

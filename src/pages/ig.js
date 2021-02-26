@@ -38,7 +38,7 @@ const IGPage = () => (
       <Box width={[320, 400, 600]} m="auto" className="igBox">
         <div className="igHeadings">
           <Heading
-            color="primaryDark"
+            color="primaryMedium"
             textAlign="center"
             fontSize={[5, 6]}
             as="h1"
@@ -47,7 +47,7 @@ const IGPage = () => (
             Caitlin Floyd
           </Heading>
           <Heading
-            color="secondary"
+            color="primary"
             fontSize={[4, 5]}
             as="h2"
             textAlign="center"

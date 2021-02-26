@@ -15,13 +15,13 @@ const Background = () => (
     />
 
     <Triangle
-      color="secondaryDark"
+      color="primaryMedium"
       height={['38vh', '80vh']}
       width={['50vw', '35vw']}
     />
 
     <Triangle
-      color="secondary"
+      color="primary"
       height={['25vh', '35vh']}
       width={['75vw', '60vw']}
       invertX
@@ -88,7 +88,7 @@ const LandingPage = () => (
               <Heading
                 textAlign="center"
                 as="h1"
-                color="primaryDark"
+                color="primaryMedium"
                 style={headingStyle}
                 fontSize={[6, 7]}
                 mb={[3, 4, 5]}

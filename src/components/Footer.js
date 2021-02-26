@@ -30,7 +30,7 @@ const TextFooter = styled(Text)`
     transition: color ease 0.5s;
 
     &:hover {
-      color: ${(props) => props.theme.colors.primaryLight};
+      color: ${(props) => props.theme.colors.primaryDark};
     }
   }
 `;
@@ -55,7 +55,7 @@ const Footer = () => (
       const { name, socialLinks } = data.contentfulAbout;
 
       return (
-        <Box p={[2, 3]} backgroundColor="secondaryDark" as="footer">
+        <Box p={[2, 3]} backgroundColor="primaryMedium" as="footer">
           <FooterContainer>
             <Fade left>
               <TextFooter fontSize={[2, 3]} center>

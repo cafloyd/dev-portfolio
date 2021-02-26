@@ -16,7 +16,7 @@ const MEDIUM_URL = 'https://medium.com';
 const Background = () => (
   <div>
     <Triangle
-      color="primaryDark"
+      color="primaryMedium"
       height={['25vh', '20vh']}
       width={['100vw', '100vw']}
       invertX
@@ -37,7 +37,7 @@ const Background = () => (
     />
 
     <Triangle
-      color="primaryDark"
+      color="primaryMedium"
       height={['40vh', '15vh']}
       width={['100vw', '100vw']}
       invertX
@@ -121,7 +121,7 @@ const MorePosts = ({ username, name, number }) => (
         </EllipsisHeading>
         <Heading lineHeight={1.5}>
           It seems that
-          <Text color="secondary">{name}</Text>
+          <Text color="primary">{name}</Text>
           {`has published ${number} more posts!`}
         </Heading>
       </Box>

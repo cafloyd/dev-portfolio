@@ -14,14 +14,14 @@ import SocialLink from '../components/SocialLink';
 const Background = () => (
   <div>
     <Triangle
-      color="secondaryDark"
+      color="primaryMedium"
       height={['50vh', '40vh']}
       width={['70vw', '70vw']}
       invertX
     />
 
     <Triangle
-      color="secondary"
+      color="primary"
       height={['25vh', '20vh']}
       width={['100vw', '100vw']}
     />

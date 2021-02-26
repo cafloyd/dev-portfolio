@@ -1,7 +1,7 @@
 :root {
   --primary: #66b2b2;
-  --primaryLight: #b1f8f2;
-  --primaryDark: #086375;
+  --primaryDark: #b1f8f2;
+  --primaryMedium: #086375;
   --background: #ffffff;
   --backgroundDark: #c2dfe3;
 }
@@ -58,19 +58,19 @@ button {
   padding: 1em;
   font-size: 10pt;
   border-radius: 30pt;
-  border: var(--primaryLight);
+  border: var(--primaryDark);
   margin-bottom: 0.5em;
 }
 
 button:hover {
   background-color: var(--backgroundDark);
-  color: var(--primaryDark);
-  border: var(--primaryDark);
+  color: var(--primaryMedium);
+  border: var(--primaryMedium);
 }
 
 button.active {
   background-color: var(--backgroundDark);
-  color: var(--primaryDark);
+  color: var(--primaryMedium);
   border: white;
 }
 
@@ -122,10 +122,10 @@ button.active {
 .gr_custom_author_1587436473 {
   /* customize your author names here */
   font-size: 10px;
-  color: var(--primaryDark);
+  color: var(--primaryMedium);
 }
 a {
-  color: var(--primaryDark);
+  color: var(--primaryMedium);
   /* font-family: ; */
 }
 
