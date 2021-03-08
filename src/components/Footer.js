@@ -59,7 +59,7 @@ const Footer = () => (
           <FooterContainer>
             <Fade left>
               <TextFooter fontSize={[2, 3]} center>
-                <span>{`© ${name}, 2020`}</span>
+                <span>{`© ${name}, 2021`}</span>
               </TextFooter>
             </Fade>
             <Flex>
