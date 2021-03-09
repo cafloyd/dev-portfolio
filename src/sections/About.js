@@ -35,10 +35,6 @@ const Background = () => (
 const ProfilePicture = styled(Image)`
   border-radius: 50%;
   transition: all 0.25s ease-out;
-
-  &:hover {
-    border-radius: 20%;
-  }
 `;
 
 const About = () => (
