@@ -12,15 +12,6 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-L4N8WYC5DJ"
-        />
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {window.dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-L4N8WYC5DJ');
-        </script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
