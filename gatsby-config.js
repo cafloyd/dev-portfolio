@@ -48,32 +48,32 @@ module.exports = client.getEntries().then((entries) => {
         username: mediumUser || '@medium',
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: 'G-L4N8WYC5DJ',
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // defaults to false
-        enableWebVitalsTracking: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // The property ID; the tracking code won't be generated without it
+    //     trackingId: 'G-L4N8WYC5DJ',
+    //     // Defines where to place the tracking script - `true` in the head and `false` in the body
+    //     head: false,
+    //     // Setting this parameter is optional
+    //     anonymize: true,
+    //     // Setting this parameter is also optional
+    //     respectDNT: true,
+    //     // Delays sending pageview hits on route update (in milliseconds)
+    //     pageTransitionDelay: 0,
+    //     // Defers execution of google analytics script after page load
+    //     defer: false,
+    //     // defaults to false
+    //     enableWebVitalsTracking: true,
+    //   },
+    // },
   );
 
   if (ANALYTICS_ID) {
     plugins.push({
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: ANALYTICS_ID,
+        trackingId: G - L4N8WYC5DJ,
       },
     });
   }
