@@ -73,7 +73,7 @@ module.exports = client.getEntries().then((entries) => {
     plugins.push({
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: G - L4N8WYC5DJ,
+        trackingId: 'G-L4N8WYC5DJ',
       },
     });
   }
