@@ -1,8 +1,10 @@
 import React from 'react';
-import { Heading, Box } from 'rebass/styled-components';
+import { Heading, Box, Image } from 'rebass/styled-components';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
+import Tanuki from '../components/Logo/Tanuki.png';
 
 const Background = () => (
   <div>
@@ -29,20 +31,33 @@ const Background = () => (
   </div>
 );
 
+const ErrorImage = styled(Image)`
+  border-radius: 50%;
+  padding: 40px;
+  margin-top: 0px;
+`;
+
 const NotFoundPage = () => (
   <Layout>
     <Section.Container id="404" Background={Background}>
       <Box width={[320, 400, 600]} m="auto">
-        <Heading
-          color="primaryMedium"
-          fontSize={['9rem', '13rem', '16rem']}
-          as="h1"
-        >
+        <Heading color="primary" fontSize={['3rem', '4rem', '5rem']} as="h1">
           404
         </Heading>
-        <Heading color="primary" fontSize={['4rem', '5rem', '6rem']} as="h2">
-          There isn&apos;t anything here
+        <Heading
+          color="primaryMedium"
+          fontSize={['1rem', '1rem', '2rem']}
+          as="h2"
+        >
+          I couldn&apos;t find what you were looking for, but I did find a cute
+          puppy!
         </Heading>
+        <a href="https://www.instagram.com/princess_tanuki/">
+          <ErrorImage
+            src={Tanuki}
+            alt="A coonhound mix puppy looking at you lovingly"
+          />
+        </a>
       </Box>
     </Section.Container>
   </Layout>
