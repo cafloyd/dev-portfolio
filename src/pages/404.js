@@ -61,6 +61,19 @@ const NotFoundPage = () => (
           I couldn&apos;t find what you were looking for, but I did find a cute
           puppy!
         </Heading>
+        <Heading
+          color="primaryLight"
+          fontSize={['.75rem', '.75rem', '1.5rem']}
+          as="h3"
+        >
+          <a href="https://caitlinfloyd.com">
+            <FontAwesomeIcon
+              name="arrow-left"
+              style={{ marginTop: '2rem', marginRight: '.5rem' }}
+            />
+            Home
+          </a>
+        </Heading>
         <a href="https://www.instagram.com/princess_tanuki/" margin="auto">
           <ErrorImage
             width={[ERROR_SM, ERROR_MD, ERROR_LG]}
