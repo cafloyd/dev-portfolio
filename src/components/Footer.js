@@ -59,7 +59,7 @@ const Footer = () => (
           <FooterContainer>
             <Fade left>
               <TextFooter fontSize={[2, 3]} center>
-                <span>{`© ${name}, 2022`}</span>
+                <span>{`© ${name}, ${new Date().getFullYear()}`}</span>
               </TextFooter>
             </Fade>
             <Flex>
